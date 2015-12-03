@@ -4,7 +4,7 @@
 //führe dies solange aus bis das Array sortiert ist!
 
 public class Bubblesort {
-
+// ein neuer Kommentar
 	public static void main(String[] args) {
 		//Deklaration der Arrays
 		int[] array1 = { 4, 1, -5, 8, 9, 0, 3 };

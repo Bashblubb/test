@@ -6,6 +6,7 @@ public class StaticBlocks {
 	// insert Code
 	static boolean flag = true;
 	static int B, H;
+	static String s;
 
 	static {
 
@@ -13,6 +14,7 @@ public class StaticBlocks {
 
 		B = sc.nextInt();
 		H = sc.nextInt();
+		s = sc.nextLine();
 		try {
 
 			if (B <= 0 || H <= 0)

@@ -11,13 +11,6 @@ public class Spiel {
 	public static int anzahlWeiﬂCom;
 	public static int anzahlBlauCom;
 	
-	public static int anzahlRotPlayer ;
-	public static int anzahlGelbPlayer  ;
-	public static int anzahlGr¸nPlayer  ;
-	public static int anzahlSchwarzPlayer ;
-	public static int anzahlWeiﬂPlayer ;
-	public static int anzahlBlauPlayer ;
-
 	public static void buttonsEnable(JRadioButton button1,
 			JRadioButton button2, JRadioButton button3, JRadioButton button4) {
 
@@ -99,126 +92,206 @@ public class Spiel {
 	public static void anzahlFarbenComputer(String auswahl1, String auswahl2,
 			String auswahl3, String auswahl4){			
 		anzahlRotCom = 0;
-		anzahlGelbCom =0;
+		anzahlGelbCom = 0;
 		anzahlGr¸nCom = 0;
 		anzahlWeiﬂCom = 0;
-		anzahlSchwarzCom =0;
+		anzahlSchwarzCom = 0;
 		anzahlBlauCom = 0;
 		
 		String[] farbarray = {auswahl1, auswahl2, auswahl3, auswahl4};
 
 		for (String eintrag : farbarray){
-			if (eintrag == "rot"){
+
+			switch (eintrag) {
+			case "rot":
 				anzahlRotCom++;
-			}else if (eintrag == "gelb"){
-				anzahlGelbCom ++;
-			}else if (eintrag == "gr¸n"){
+				break;
+			case "gelb":
+				anzahlGelbCom++;
+				break;
+			case "gr¸n":
 				anzahlGr¸nCom++;
-			}else if (eintrag == "schwarz"){
+				break;
+			case "schwarz":
 				anzahlSchwarzCom++;
-			}else if (eintrag == "weiﬂ"){
+				break;
+			case "weiﬂ":
 				anzahlWeiﬂCom++;
-			}else if (eintrag == "blau"){
+				break;
+			case "blau":
 				anzahlBlauCom++;
-			}		
+				break;
+			}
 		}
-		//System.out.println(anzahlBlauCom);
+	}
+		
+	public static void reduziereFarbe(String zugFarbe){
+		switch (zugFarbe) {
+		case "rot":
+			anzahlRotCom--;
+			break;
+		case "gelb":
+			anzahlGelbCom--;
+			break;
+		case "gr¸n":
+			anzahlGr¸nCom--;
+			break;
+		case "schwarz":
+			anzahlSchwarzCom--;
+			break;
+		case "weiﬂ":
+			anzahlWeiﬂCom--;
+			break;
+		case "blau":
+			anzahlBlauCom--;
+			break;
+		}
+	}
+	
+	// spielalgorithmus
+	public static String runde1Schwarz(String auswahl1, String auswahl2,
+			String auswahl3, String auswahl4, String zugFarbe) {
+						
+		if (zugFarbe == auswahl1) {
+			reduziereFarbe(zugFarbe);
+			return "schwarz";			
+		} else {
+			return "nichts";			
+		}				
+	}
+	
+	public static String runde2Schwarz(String auswahl1, String auswahl2,
+			String auswahl3, String auswahl4, String zugFarbe) {
+
+		if (calcErgebnisFarbe(auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe) == true) {
+			if (zugFarbe == auswahl2) {
+				reduziereFarbe(zugFarbe);
+				return "schwarz";
+			} else {
+				return "nichts";
+			}
+		} else
+			return "nichts";
+	}
+
+	public static String runde3Schwarz(String auswahl1, String auswahl2,
+			String auswahl3, String auswahl4, String zugFarbe) {
+		if (calcErgebnisFarbe(auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe) == true) {
+
+			if (zugFarbe == auswahl3) {
+				reduziereFarbe(zugFarbe);
+				return "schwarz";
+			} else {
+				return "nichts";
+			}
+		} else {
+			return "nichts";
+		}
+	}
+	
+	public static String runde4Schwarz(String auswahl1, String auswahl2,
+			String auswahl3, String auswahl4, String zugFarbe) {
+		if (calcErgebnisFarbe(auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe) == true) {
+		if (zugFarbe == auswahl4) {
+			reduziereFarbe(zugFarbe);
+			return "schwarz";
+		} else {
+			return "nichts";
+		}
+		}else {
+			return "nichts";
+		}
 	}
 	
 
-	public static void anzahlFarbenSpieler(String zugFarbe1, String zugFarbe2,
-			String zugFarbe3, String zugFarbe4){			
-		anzahlRotPlayer = 0;
-		anzahlGelbPlayer  =0;
-		anzahlGr¸nPlayer  = 0;
-		anzahlWeiﬂPlayer  = 0;
-		anzahlSchwarzPlayer  =0;
-		anzahlBlauPlayer  = 0;
+	public static String runde1Weiﬂ(String ergebnis1,String auswahl1, String auswahl2,
+			String auswahl3, String auswahl4, String zugFarbe1){
+
+		if (ergebnis1 == "nichts") {
+			if (calcErgebnisFarbe(auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe1) == true) {
+				reduziereFarbe(zugFarbe1);
+				return "weiﬂ";
+			} else {
+				return "nichts";
+			}
+		}else{
+			return "schwarz";
+		}
+	}
+	
+	
+	public static String runde2Weiﬂ(String ergebnis2,String auswahl1, String auswahl2,
+			String auswahl3, String auswahl4, String zugFarbe2){
+
+		if (ergebnis2 == "nichts") {
+			if (calcErgebnisFarbe(auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe2) == true) {
+				reduziereFarbe(zugFarbe2);
+				return "weiﬂ";
+			} else {
+				return "nichts";
+			}
+		}else{
+			return "schwarz";
+		}
+	}
+	
+
+	public static String runde3Weiﬂ(String ergebnis3,String auswahl1, String auswahl2,
+			String auswahl3, String auswahl4, String zugFarbe3){
+
+		if (ergebnis3 == "nichts") {
+			if (calcErgebnisFarbe(auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe3) == true) {
+				reduziereFarbe(zugFarbe3);
+				return "weiﬂ";
+				
+			} else {
+				return "nichts";
+			}
+		}else{
+			return "schwarz";
+		}
+	}
+	
+
+	public static String runde4Weiﬂ(String ergebnis4,String auswahl1, String auswahl2,
+			String auswahl3, String auswahl4, String zugFarbe4){
+
+		if (ergebnis4 == "nichts") {
+			if (calcErgebnisFarbe(auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe4) == true) {
+				reduziereFarbe(zugFarbe4);
+				return "weiﬂ";
+			} else {
+				return "nichts";
+			}
+		}else{
+			return "schwarz";
+		}
+	}
+	
+	public static boolean calcErgebnisFarbe(String auswahl1, String auswahl2,
+			String auswahl3, String auswahl4, String zugFarbe){
 		
-		String[] farbarray = {zugFarbe1, zugFarbe2, zugFarbe3, zugFarbe4};
-
-		for (String eintrag : farbarray){
-			if (eintrag == "rot"){
-				anzahlRotPlayer++;
-			}else if (eintrag == "gelb"){
-				anzahlGelbPlayer ++;
-			}else if (eintrag == "gr¸n"){
-				anzahlGr¸nPlayer++;
-			}else if (eintrag == "schwarz"){
-				anzahlSchwarzPlayer++;
-			}else if (eintrag == "weiﬂ"){
-				anzahlWeiﬂPlayer++;
-			}else if (eintrag == "blau"){
-				anzahlBlauPlayer++;
-			}		
-		}
-		//System.out.println(anzahlBlauPlayer);
-	}
-
-	// spielalgorithmus
-	// hier editieren und um anzahlFarben (Farben von Computer und Spieler vergleichen) erg‰nzen
-	public static String runde1(String auswahl1, String auswahl2,
-			String auswahl3, String auswahl4, String zugFarbe) {
-
-		if (zugFarbe == auswahl1) {
-			return "schwarz";
-		} else if (zugFarbe == auswahl2) {
-			return "weiﬂ";
-		} else if (zugFarbe == auswahl3) {
-			return "weiﬂ";
-		} else if (zugFarbe == auswahl4) {
-			return "weiﬂ";
+		if (zugFarbe == "rot" && anzahlRotCom > 0) {
+			return true;
+		} else if (zugFarbe == "blau" && anzahlBlauCom > 0) {
+			return true;
+		} else if (zugFarbe == "gelb" && anzahlGelbCom > 0) {
+			return true;
+		} else if (zugFarbe == "gr¸n" && anzahlGr¸nCom > 0) {
+			return true;
+		} else if (zugFarbe == "schwarz" && anzahlSchwarzCom > 0) {
+			return true;
+		} else if (zugFarbe == "weiﬂ" && anzahlWeiﬂCom > 0) {
+			return true;
 		} else {
-			return "nichts";
+			return false;
 		}
+
 	}
-
-	public static String runde2(String auswahl1, String auswahl2,
-			String auswahl3, String auswahl4, String zugFarbe) {
-
-		if (zugFarbe == auswahl2) {
-			return "schwarz";
-		} else if (zugFarbe == auswahl1) {
-			return "weiﬂ";
-		} else if (zugFarbe == auswahl3) {
-			return "weiﬂ";
-		} else if (zugFarbe == auswahl4) {
-			return "weiﬂ";
-		} else {
-			return "nichts";
-		}
-	}
-
-	public static String runde3(String auswahl1, String auswahl2,
-			String auswahl3, String auswahl4, String zugFarbe) {
-
-		if (zugFarbe == auswahl3) {
-			return "schwarz";
-		} else if (zugFarbe == auswahl1) {
-			return "weiﬂ";
-		} else if (zugFarbe == auswahl2) {
-			return "weiﬂ";
-		} else if (zugFarbe == auswahl4) {
-			return "weiﬂ";
-		} else {
-			return "nichts";
-		}
-	}
-
-	public static String runde4(String auswahl1, String auswahl2,
-			String auswahl3, String auswahl4, String zugFarbe) {
-
-		if (zugFarbe == auswahl4) {
-			return "schwarz";
-		} else if (zugFarbe == auswahl1) {
-			return "weiﬂ";
-		} else if (zugFarbe == auswahl2) {
-			return "weiﬂ";
-		} else if (zugFarbe == auswahl3) {
-			return "weiﬂ";
-		} else {
-			return "nichts";
-		}
+	
+	public static void validateErgebnis(String ergebnis1, String ergebnis2,
+			String ergebnis3, String ergebnis4){
+		
 	}
 
 	public static void setErgebnisColor(String ergebnis1, String ergebnis2,
@@ -252,71 +325,63 @@ public class Spiel {
 			weiﬂe ++;
 		}
 		
-		if(schwarze == 1 && weiﬂe == 0){
+		if (schwarze == 1 && weiﬂe == 0) {
 			button1.setBackground(Color.black);
-		}else if(schwarze == 1 && weiﬂe == 1){
+		} else if (schwarze == 1 && weiﬂe == 1) {
 			button1.setBackground(Color.black);
-			button2.setBackground(Color.white);			
-		}
-		else if(schwarze == 1 && weiﬂe == 2){
+			button2.setBackground(Color.white);
+		} else if (schwarze == 1 && weiﬂe == 2) {
 			button1.setBackground(Color.black);
 			button2.setBackground(Color.white);
 			button3.setBackground(Color.white);
-		}
-		else if(schwarze == 1 && weiﬂe == 3){
+		} else if (schwarze == 1 && weiﬂe == 3) {
 			button1.setBackground(Color.black);
 			button2.setBackground(Color.white);
 			button3.setBackground(Color.white);
 			button4.setBackground(Color.white);
-		}else if(schwarze == 2 && weiﬂe == 0){
+		} else if (schwarze == 2 && weiﬂe == 0) {
 			button1.setBackground(Color.black);
 			button2.setBackground(Color.black);
-		}else if(schwarze == 2 && weiﬂe == 1){
+		} else if (schwarze == 2 && weiﬂe == 1) {
 			button1.setBackground(Color.black);
 			button2.setBackground(Color.black);
 			button3.setBackground(Color.white);
-		}
-		else if(schwarze == 2 && weiﬂe == 2){
+		} else if (schwarze == 2 && weiﬂe == 2) {
 			button1.setBackground(Color.black);
 			button2.setBackground(Color.black);
 			button3.setBackground(Color.white);
 			button4.setBackground(Color.white);
-		}else if(schwarze == 3 && weiﬂe == 0){
+		} else if (schwarze == 3 && weiﬂe == 0) {
 			button1.setBackground(Color.black);
 			button2.setBackground(Color.black);
-			button3.setBackground(Color.black);		
-		}
-		else if(schwarze == 3 && weiﬂe == 1){
+			button3.setBackground(Color.black);
+		} else if (schwarze == 3 && weiﬂe == 1) {
 			button1.setBackground(Color.black);
 			button2.setBackground(Color.black);
 			button3.setBackground(Color.black);
 			button4.setBackground(Color.white);
-		}else if(schwarze == 4){
+		} else if (schwarze == 4) {
 			button1.setBackground(Color.black);
 			button2.setBackground(Color.black);
 			button3.setBackground(Color.black);
 			button4.setBackground(Color.black);
-		}else if (schwarze == 0 && weiﬂe == 1){
+		} else if (schwarze == 0 && weiﬂe == 1) {
 			button1.setBackground(Color.white);
-		}
-		else if (schwarze == 0 && weiﬂe == 2){
+		} else if (schwarze == 0 && weiﬂe == 2) {
 			button1.setBackground(Color.white);
 			button2.setBackground(Color.white);
-		}else if (schwarze == 0 && weiﬂe == 3){
+		} else if (schwarze == 0 && weiﬂe == 3) {
 			button1.setBackground(Color.white);
 			button2.setBackground(Color.white);
 			button3.setBackground(Color.white);
-		}
-		else if (schwarze == 0 && weiﬂe == 4){
+		} else if (schwarze == 0 && weiﬂe == 4) {
 			button1.setBackground(Color.white);
 			button2.setBackground(Color.white);
 			button3.setBackground(Color.white);
 			button4.setBackground(Color.white);
-		}else if(schwarze == 1 && weiﬂe == 0){
+		} else if (schwarze == 1 && weiﬂe == 0) {
 			button1.setBackground(Color.black);
 		}
-		
-	
 	}
 	
 	static String getAuswahl(JRadioButton button) {
@@ -367,115 +432,100 @@ public class Spiel {
 		}
 
 	}
-
-	public static String setComputerColors2() {
-		int auswahl2 = (int) ((Math.random() * 6) + 1);
-
-		if (auswahl2 == 1) {
-			return "rot";
-		} else if (auswahl2 == 2) {
-			return "gelb";
-		} else if (auswahl2 == 3) {
-			return "gr¸n";
-		} else if (auswahl2 == 4) {
-			return "schwarz";
-		} else if (auswahl2 == 5) {
-			return "weiﬂ";
-		} else {
-			return "blau";
-		}
-	}
-
-	public static String setComputerColors3() {
-		int auswahl3 = (int) ((Math.random() * 6) + 1);
-		if (auswahl3 == 1) {
-			return "rot";
-		} else if (auswahl3 == 2) {
-			return "gelb";
-		} else if (auswahl3 == 3) {
-			return "gr¸n";
-		} else if (auswahl3 == 4) {
-			return "schwarz";
-		} else if (auswahl3 == 5) {
-			return "weiﬂ";
-		} else {
-			return "blau";
-		}
-	}
-
-	public static String setComputerColors4() {
-		
-		int auswahl4 = (int) ((Math.random() * 6) + 1);
-
-		if (auswahl4 == 1) {
-			return "rot";
-		} else if (auswahl4 == 2) {
-			return "gelb";
-		} else if (auswahl4 == 3) {
-			return "gr¸n";
-		} else if (auswahl4 == 4) {
-			return "schwarz";
-		} else if (auswahl4 == 5) {
-			return "weiﬂ";
-		} else {
-			return "blau";
-		}
-	}
-
-	public static void radiobuttonComputerColor(JRadioButton farbe1, JRadioButton farbe2, JRadioButton farbe3, JRadioButton farbe4, String auswahl1, String auswahl2, String auswahl3, String auswahl4){
 	
-		if (auswahl1 == "rot") {
+	public static boolean etwasAusgewaehlt(JRadioButton rundexbt1, JRadioButton rundexbt2, JRadioButton rundexbt3, JRadioButton rundexbt4){
+		
+		
+		
+		return true;
+	}
+
+public static void radiobuttonComputerColor(JRadioButton farbe1, JRadioButton farbe2, JRadioButton farbe3, JRadioButton farbe4, String auswahl1, String auswahl2, String auswahl3, String auswahl4){
+
+		switch (auswahl1) {
+		case "rot":
 			farbe1.setBackground(Color.red);
-		} else if (auswahl1 == "gelb") {
+			break;
+		case "gelb":
 			farbe1.setBackground(Color.yellow);
-		} else if (auswahl1 == "gr¸n") {
+			break;
+		case "gr¸n":
 			farbe1.setBackground(Color.green);
-		} else if (auswahl1 == "schwarz") {
+			break;
+		case "schwarz":
 			farbe1.setBackground(Color.black);
-		} else if (auswahl1 == "weiﬂ") {
+			break;
+		case "weiﬂ":
 			farbe1.setBackground(Color.white);
-		} else if (auswahl1 == "blau") {
+			break;
+		case "blau":
 			farbe1.setBackground(Color.blue);
+			break;
 		}
-		if (auswahl2 == "rot") {
+
+		switch (auswahl2) {
+		case "rot":
 			farbe2.setBackground(Color.red);
-		} else if (auswahl2 == "gelb") {
+			break;
+		case "gelb":
 			farbe2.setBackground(Color.yellow);
-		} else if (auswahl2 == "gr¸n") {
+			break;
+		case "gr¸n":
 			farbe2.setBackground(Color.green);
-		} else if (auswahl2 == "schwarz") {
+			break;
+		case "schwarz":
 			farbe2.setBackground(Color.black);
-		} else if (auswahl2 == "weiﬂ") {
+			break;
+		case "weiﬂ":
 			farbe2.setBackground(Color.white);
-		} else if (auswahl2 == "blau") {
+			break;
+		case "blau":
 			farbe2.setBackground(Color.blue);
+			break;
 		}
-		if (auswahl3 == "rot") {
+
+		switch (auswahl3) {
+		case "rot":
 			farbe3.setBackground(Color.red);
-		} else if (auswahl3 == "gelb") {
+			break;
+		case "gelb":
 			farbe3.setBackground(Color.yellow);
-		} else if (auswahl3 == "gr¸n") {
+			break;
+		case "gr¸n":
 			farbe3.setBackground(Color.green);
-		} else if (auswahl3 == "schwarz") {
+			break;
+		case "schwarz":
 			farbe3.setBackground(Color.black);
-		} else if (auswahl3 == "weiﬂ") {
+			break;
+		case "weiﬂ":
 			farbe3.setBackground(Color.white);
-		} else if (auswahl3 == "blau") {
+			break;
+		case "blau":
 			farbe3.setBackground(Color.blue);
+			break;
 		}
-		if (auswahl4 == "rot") {
+
+		switch (auswahl4) {
+		case "rot":
 			farbe4.setBackground(Color.red);
-		} else if (auswahl4 == "gelb") {
+			break;
+		case "gelb":
 			farbe4.setBackground(Color.yellow);
-		} else if (auswahl4 == "gr¸n") {
+			break;
+		case "gr¸n":
 			farbe4.setBackground(Color.green);
-		} else if (auswahl4 == "schwarz") {
+			break;
+		case "schwarz":
 			farbe4.setBackground(Color.black);
-		} else if (auswahl4 == "weiﬂ") {
+			break;
+		case "weiﬂ":
 			farbe4.setBackground(Color.white);
-		} else if (auswahl4 == "blau") {
+			break;
+		case "blau":
 			farbe4.setBackground(Color.blue);
+			break;
 		}
+		
 
 	}
 }

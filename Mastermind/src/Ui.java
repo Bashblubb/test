@@ -24,7 +24,7 @@ public class Ui extends Spiel implements ActionListener {
 	int spielRunde = 1;	
 	boolean showWert = false;
 	static public boolean einspieler;
-	int highscore = 0;
+	static int highscore = 0;
 	boolean gewonnen = false;
 	static JFrame frame = new JFrame("Auswahlfeld");
 	static JFrame frame2 = new JFrame("Spielmen¸");
@@ -67,6 +67,22 @@ public class Ui extends Spiel implements ActionListener {
 	static JRadioButton runde8bt2 = new JRadioButton();
 	static JRadioButton runde8bt3 = new JRadioButton();
 	static JRadioButton runde8bt4 = new JRadioButton();
+	static JRadioButton runde9bt1 = new JRadioButton();
+	static JRadioButton runde9bt2 = new JRadioButton();
+	static JRadioButton runde9bt3 = new JRadioButton();
+	static JRadioButton runde9bt4 = new JRadioButton();
+	static JRadioButton runde10bt1 = new JRadioButton();
+	static JRadioButton runde10bt2 = new JRadioButton();
+	static JRadioButton runde10bt3 = new JRadioButton();
+	static JRadioButton runde10bt4 = new JRadioButton();
+	static JRadioButton runde11bt1 = new JRadioButton();
+	static JRadioButton runde11bt2 = new JRadioButton();
+	static JRadioButton runde11bt3 = new JRadioButton();
+	static JRadioButton runde11bt4 = new JRadioButton();
+	static JRadioButton runde12bt1 = new JRadioButton();
+	static JRadioButton runde12bt2 = new JRadioButton();
+	static JRadioButton runde12bt3 = new JRadioButton();
+	static JRadioButton runde12bt4 = new JRadioButton();
 	// Buttons zur Auswahl der Farbe
 	JRadioButton red5 = new JRadioButton();
 	JRadioButton green5 = new JRadioButton();
@@ -112,6 +128,22 @@ public class Ui extends Spiel implements ActionListener {
 	static JRadioButton zug02 = new JRadioButton();
 	static JRadioButton zug03 = new JRadioButton();
 	static JRadioButton zug04 = new JRadioButton();
+	static JRadioButton zug81 = new JRadioButton();
+	static JRadioButton zug82 = new JRadioButton();
+	static JRadioButton zug83 = new JRadioButton();
+	static JRadioButton zug84 = new JRadioButton();
+	static JRadioButton zug91 = new JRadioButton();
+	static JRadioButton zug92 = new JRadioButton();
+	static JRadioButton zug93 = new JRadioButton();
+	static JRadioButton zug94 = new JRadioButton();
+	static JRadioButton zug101 = new JRadioButton();
+	static JRadioButton zug102 = new JRadioButton();
+	static JRadioButton zug103 = new JRadioButton();
+	static JRadioButton zug104 = new JRadioButton();
+	static JRadioButton zug111 = new JRadioButton();
+	static JRadioButton zug112 = new JRadioButton();
+	static JRadioButton zug113 = new JRadioButton();
+	static JRadioButton zug114 = new JRadioButton();
 	// Gruppierungen/Labels zur Beschriftung
 	ButtonGroup gruppe5 = new ButtonGroup();
 	JLabel spielfeld = new JLabel("Spielfeld: ");
@@ -128,12 +160,12 @@ public class Ui extends Spiel implements ActionListener {
 	
 	
 	void menue(){
-		frame2.setSize(200, 200);
+		frame2.setSize(300, 300);
 		frame2.setVisible(true);
 		frame2.setLayout(null);		
-		einSpieler.setBounds(30,25, 125,25);
-		zweiSpieler.setBounds(30, 75, 125,25);
-		exit.setBounds(30, 125, 125,25);
+		einSpieler.setBounds(70,55, 145,45);
+		zweiSpieler.setBounds(70, 105, 145,45);
+		exit.setBounds(70, 155, 145,45);
 		frame2.add(panel2);
 		frame2.add(einSpieler);
 		frame2.add(zweiSpieler);
@@ -146,48 +178,64 @@ public class Ui extends Spiel implements ActionListener {
 	
 
 	void ui() {
-		frame.setSize(500, 500);
+		frame.setSize(500, 800);
 		frame.setVisible(true);
 		frame.setLayout(null);
 
-		ausw‰hlen.setBounds(350, 400, 100, 50);
-		retry.setBounds(350, 350, 100, 50);
-		spiel.setBounds(250, 350, 100, 100);	
+		ausw‰hlen.setBounds(350, 700, 100, 50);
+		retry.setBounds(350, 650, 100, 50);
+		spiel.setBounds(250, 650, 100, 100);	
 		show.setBounds(380,250,75,25);
 		score.setBounds(380,25,100,25);
 		punktzahl.setBounds(380, 00, 100, 25);
-		runde1bt1.setBounds(25, 405, 20, 25);
-		runde1bt2.setBounds(50, 405, 20, 25);
-		runde1bt3.setBounds(75, 405, 20, 25);
-		runde1bt4.setBounds(100, 405, 20, 25);
-		runde2bt1.setBounds(25, 355, 20, 25);
-		runde2bt2.setBounds(50, 355, 20, 25);
-		runde2bt3.setBounds(75, 355, 20, 25);
-		runde2bt4.setBounds(100, 355, 20, 25);
-		runde8bt1.setBounds(25, 35, 20, 25);
-		runde7bt1.setBounds(25, 95, 20, 25);
-		runde6bt1.setBounds(25, 150, 20, 25);
-		runde5bt1.setBounds(25, 205, 20, 25);
-		runde4bt1.setBounds(25, 255, 20, 25);
-		runde3bt1.setBounds(25, 315, 20, 25);
-		runde8bt2.setBounds(50, 35, 20, 25);
-		runde7bt2.setBounds(50, 95, 20, 25);
-		runde6bt2.setBounds(50, 150, 20, 25);
-		runde5bt2.setBounds(50, 205, 20, 25);
-		runde4bt2.setBounds(50, 255, 20, 25);
-		runde3bt2.setBounds(50, 315, 20, 25);
-		runde8bt3.setBounds(75, 35, 20, 25);
-		runde7bt3.setBounds(75, 95, 20, 25);
-		runde6bt3.setBounds(75, 150, 20, 25);
-		runde5bt3.setBounds(75, 205, 20, 25);
-		runde4bt3.setBounds(75, 255, 20, 25);
-		runde3bt3.setBounds(75, 315, 20, 25);
-		runde8bt4.setBounds(100, 35, 20, 25);
-		runde7bt4.setBounds(100, 95, 20, 25);
-		runde6bt4.setBounds(100, 150, 20, 25);
-		runde5bt4.setBounds(100, 205, 20, 25);
-		runde4bt4.setBounds(100, 255, 20, 25);
-		runde3bt4.setBounds(100, 315, 20, 25);
+		runde1bt1.setBounds(25, 705, 20, 25);
+		runde1bt2.setBounds(50, 705, 20, 25);
+		runde1bt3.setBounds(75, 705, 20, 25);
+		runde1bt4.setBounds(100, 705, 20, 25);
+		runde2bt1.setBounds(25, 655, 20, 25);
+		runde2bt2.setBounds(50, 655, 20, 25);
+		runde2bt3.setBounds(75, 655, 20, 25);
+		runde2bt4.setBounds(100, 655, 20, 25);
+		runde8bt1.setBounds(25, 335, 20, 25);
+		runde7bt1.setBounds(25, 395, 20, 25);
+		runde6bt1.setBounds(25, 450, 20, 25);
+		runde5bt1.setBounds(25, 505, 20, 25);
+		runde4bt1.setBounds(25, 555, 20, 25);
+		runde3bt1.setBounds(25, 615, 20, 25);
+		runde8bt2.setBounds(50, 335, 20, 25);
+		runde7bt2.setBounds(50, 395, 20, 25);
+		runde6bt2.setBounds(50, 450, 20, 25);
+		runde5bt2.setBounds(50, 505, 20, 25);
+		runde4bt2.setBounds(50, 555, 20, 25);
+		runde3bt2.setBounds(50, 615, 20, 25);
+		runde8bt3.setBounds(75, 335, 20, 25);
+		runde7bt3.setBounds(75, 395, 20, 25);
+		runde6bt3.setBounds(75, 450, 20, 25);
+		runde5bt3.setBounds(75, 505, 20, 25);
+		runde4bt3.setBounds(75, 555, 20, 25);
+		runde3bt3.setBounds(75, 615, 20, 25);
+		runde8bt4.setBounds(100, 335, 20, 25);
+		runde7bt4.setBounds(100, 395, 20, 25);
+		runde6bt4.setBounds(100, 450, 20, 25);
+		runde5bt4.setBounds(100, 505, 20, 25);
+		runde4bt4.setBounds(100, 555, 20, 25);
+		runde3bt4.setBounds(100, 615, 20, 25);
+		runde9bt1.setBounds(25, 285, 20, 25);
+		runde9bt2.setBounds(50, 285, 20, 25);
+		runde9bt3.setBounds(75, 285, 20, 25);
+		runde9bt4.setBounds(100, 285, 20, 25);
+		runde10bt1.setBounds(25, 235, 20, 25);
+		runde10bt2.setBounds(50, 235, 20, 25);
+		runde10bt3.setBounds(75, 235, 20, 25);
+		runde10bt4.setBounds(100, 235, 20, 25);
+		runde11bt1.setBounds(25, 185, 20, 25);
+		runde11bt2.setBounds(50, 185, 20, 25);
+		runde11bt3.setBounds(75, 185, 20, 25);
+		runde11bt4.setBounds(100, 185, 20, 25);
+		runde12bt1.setBounds(25, 135, 20, 25);
+		runde12bt2.setBounds(50, 135, 20, 25);
+		runde12bt3.setBounds(75, 135, 20, 25);
+		runde12bt4.setBounds(100, 135, 20, 25);
 		red5.setBounds(275, 75, 20, 25);
 		blue5.setBounds(300, 75, 20, 25);
 		yell5.setBounds(325, 75, 20, 25);
@@ -196,7 +244,6 @@ public class Ui extends Spiel implements ActionListener {
 		green5.setBounds(325, 100, 20, 25);	
 		
 		spielfeld.setBounds(25, 00, 100, 25);		
-		spielfeld.setBounds(25, 00, 100, 25);
 		ergebnisse.setBounds(150, 00, 100, 25);
 		farbwahl.setBounds(275, 30, 100, 25);
 		farbkombi.setBounds(275, 200, 125, 25);
@@ -204,38 +251,54 @@ public class Ui extends Spiel implements ActionListener {
 		farbe2.setBounds(300, 250, 20, 25);
 		farbe3.setBounds(325, 250, 20, 25);
 		farbe4.setBounds(350, 250, 20, 25);		
-		zug01.setBounds(150, 25, 20, 25);
-		zug02.setBounds(175,25, 20, 25);
-		zug03.setBounds(150, 50, 20, 25);
-		zug04.setBounds(175, 50, 20, 25);
-		zug11.setBounds(150, 80, 20, 25);
-		zug12.setBounds(175, 80, 20, 25);
-		zug13.setBounds(150, 105, 20, 25);
-		zug14.setBounds(175, 105, 20, 25);
-		zug21.setBounds(150, 135, 20, 25);
-		zug22.setBounds(175, 135, 20, 25);
-		zug23.setBounds(150, 160, 20, 25);
-		zug24.setBounds(175, 160, 20, 25);
-		zug31.setBounds(150, 190, 20, 25);
-		zug32.setBounds(175, 190, 20, 25);
-		zug33.setBounds(150, 215, 20, 25);
-		zug34.setBounds(175, 215, 20, 25);
-		zug41.setBounds(150, 245, 20, 25);
-		zug42.setBounds(175, 245, 20, 25);
-		zug43.setBounds(150, 270, 20, 25);
-		zug44.setBounds(175, 270, 20, 25);
-		zug51.setBounds(150, 300, 20, 25);
-		zug52.setBounds(175, 300, 20, 25);
-		zug53.setBounds(150, 325, 20, 25);
-		zug54.setBounds(175, 325, 20, 25);
-		zug61.setBounds(150, 350, 20, 25);
-		zug62.setBounds(175, 350, 20, 25);
-		zug63.setBounds(150, 375, 20, 25);
-		zug64.setBounds(175, 375, 20, 25);
-		zug71.setBounds(150, 400, 20, 25);
-		zug72.setBounds(175, 400, 20, 25);
-		zug73.setBounds(150, 425, 20, 25);
-		zug74.setBounds(175, 425, 20, 25);		
+		zug111.setBounds(150, 125, 20, 25);
+		zug112.setBounds(175,125, 20, 25);
+		zug113.setBounds(150, 150, 20, 25);
+		zug114.setBounds(175, 150, 20, 25);
+		zug101.setBounds(150, 175, 20, 25);
+		zug102.setBounds(175,175, 20, 25);
+		zug103.setBounds(150, 200, 20, 25);
+		zug104.setBounds(175, 200, 20, 25);
+		zug91.setBounds(150, 225, 20, 25);
+		zug92.setBounds(175,225, 20, 25);
+		zug93.setBounds(150, 250, 20, 25);
+		zug94.setBounds(175, 250, 20, 25);
+		zug81.setBounds(150, 275, 20, 25);
+		zug82.setBounds(175,275, 20, 25);
+		zug83.setBounds(150, 300, 20, 25);
+		zug84.setBounds(175, 300, 20, 25);
+		zug01.setBounds(150, 325, 20, 25);
+		zug02.setBounds(175,325, 20, 25);
+		zug03.setBounds(150, 350, 20, 25);
+		zug04.setBounds(175, 350, 20, 25);
+		zug11.setBounds(150, 380, 20, 25);
+		zug12.setBounds(175, 380, 20, 25);
+		zug13.setBounds(150, 405, 20, 25);
+		zug14.setBounds(175, 405, 20, 25);
+		zug21.setBounds(150, 435, 20, 25);
+		zug22.setBounds(175, 435, 20, 25);
+		zug23.setBounds(150, 460, 20, 25);
+		zug24.setBounds(175, 460, 20, 25);
+		zug31.setBounds(150, 490, 20, 25);
+		zug32.setBounds(175, 490, 20, 25);
+		zug33.setBounds(150, 515, 20, 25);
+		zug34.setBounds(175, 515, 20, 25);
+		zug41.setBounds(150, 545, 20, 25);
+		zug42.setBounds(175, 545, 20, 25);
+		zug43.setBounds(150, 570, 20, 25);
+		zug44.setBounds(175, 570, 20, 25);
+		zug51.setBounds(150, 600, 20, 25);
+		zug52.setBounds(175, 600, 20, 25);
+		zug53.setBounds(150, 625, 20, 25);
+		zug54.setBounds(175, 625, 20, 25);
+		zug61.setBounds(150, 650, 20, 25);
+		zug62.setBounds(175, 650, 20, 25);
+		zug63.setBounds(150, 675, 20, 25);
+		zug64.setBounds(175, 675, 20, 25);
+		zug71.setBounds(150, 700, 20, 25);
+		zug72.setBounds(175, 700, 20, 25);
+		zug73.setBounds(150, 725, 20, 25);
+		zug74.setBounds(175, 725, 20, 25);		
 		buttonsDisable(runde8bt1, runde7bt1, runde4bt1, runde3bt1);
 		buttonsDisable(runde1bt1, runde1bt2, runde1bt3, runde1bt4);	
 		buttonsDisable(runde8bt2, runde7bt2, runde4bt2, runde3bt2);
@@ -244,6 +307,10 @@ public class Ui extends Spiel implements ActionListener {
 		buttonsDisable(runde2bt1, runde2bt2, runde2bt3, runde2bt4);
 		buttonsDisable(runde5bt1, runde6bt1, runde5bt2, runde6bt2);
 		buttonsDisable(runde5bt4, runde6bt4, runde5bt3, runde6bt3);
+		buttonsDisable(runde9bt1,runde9bt2,runde9bt3,runde9bt4);
+		buttonsDisable(runde10bt1,runde10bt2,runde10bt3,runde10bt4);
+		buttonsDisable(runde11bt1,runde11bt2,runde11bt3,runde11bt4);
+		buttonsDisable(runde12bt1,runde12bt2,runde12bt3,runde12bt4);
 		buttonsDisable(zug01, zug02, zug03, zug04);
 		buttonsDisable(zug11, zug12, zug13, zug14);
 		buttonsDisable(zug21, zug22, zug23, zug24);
@@ -252,7 +319,12 @@ public class Ui extends Spiel implements ActionListener {
 		buttonsDisable(zug51, zug52, zug53, zug54);
 		buttonsDisable(zug61, zug62, zug63, zug64);
 		buttonsDisable(zug71, zug72, zug73, zug74);	
+		buttonsDisable(zug81, zug82, zug83, zug84);	
+		buttonsDisable(zug91, zug92, zug93, zug94);	
+		buttonsDisable(zug101, zug102, zug103, zug104);	
+		buttonsDisable(zug111, zug112, zug113, zug114);	
 		spiel.setEnabled(false);	
+		score.setText(String.valueOf(highscore));
 
 		red5.setBackground(Color.red);
 		blue5.setBackground(Color.blue);
@@ -293,6 +365,23 @@ public class Ui extends Spiel implements ActionListener {
 		frame.add(runde5bt4);
 		frame.add(runde8bt4);
 		frame.add(runde3bt4);
+		frame.add(runde9bt1);
+		frame.add(runde9bt2);
+		frame.add(runde9bt3);
+		frame.add(runde9bt4);
+		frame.add(runde10bt1);
+		frame.add(runde10bt2);
+		frame.add(runde10bt3);
+		frame.add(runde10bt4);
+		frame.add(runde11bt1);
+		frame.add(runde11bt2);
+		frame.add(runde11bt3);
+		frame.add(runde11bt4);
+		frame.add(runde12bt4);
+		frame.add(runde12bt1);
+		frame.add(runde12bt2);
+		frame.add(runde12bt3);
+		frame.add(runde12bt4);
 		frame.add(black5);
 		frame.add(blue5);
 		frame.add(yell5);
@@ -337,6 +426,23 @@ public class Ui extends Spiel implements ActionListener {
 		frame.add(zug02);
 		frame.add(zug03);
 		frame.add(zug04);
+		frame.add(zug81);
+		frame.add(zug82);
+		frame.add(zug83);
+		frame.add(zug84);
+		frame.add(zug91);
+		frame.add(zug92);
+		frame.add(zug93);
+		frame.add(zug94);
+		frame.add(zug101);
+		frame.add(zug102);
+		frame.add(zug103);
+		frame.add(zug104);
+		frame.add(zug111);
+		frame.add(zug112);
+		frame.add(zug113);
+		frame.add(zug114);
+		
 		frame.add(runde1bt1);
 		frame.add(runde1bt2);
 		frame.add(runde1bt3);
@@ -394,6 +500,22 @@ public class Ui extends Spiel implements ActionListener {
 		runde2bt2.addActionListener(actionlistener);
 		runde2bt3.addActionListener(actionlistener);
 		runde2bt4.addActionListener(actionlistener);
+		runde9bt1.addActionListener(actionlistener);
+		runde9bt2.addActionListener(actionlistener);
+		runde9bt3.addActionListener(actionlistener);
+		runde9bt4.addActionListener(actionlistener);
+		runde10bt1.addActionListener(actionlistener);
+		runde10bt2.addActionListener(actionlistener);
+		runde10bt3.addActionListener(actionlistener);
+		runde10bt4.addActionListener(actionlistener);
+		runde11bt1.addActionListener(actionlistener);
+		runde11bt2.addActionListener(actionlistener);
+		runde11bt3.addActionListener(actionlistener);
+		runde11bt4.addActionListener(actionlistener);
+		runde12bt1.addActionListener(actionlistener);
+		runde12bt2.addActionListener(actionlistener);
+		runde12bt3.addActionListener(actionlistener);
+		runde12bt4.addActionListener(actionlistener);
 	}
 	
 
@@ -410,9 +532,9 @@ public class Ui extends Spiel implements ActionListener {
 			JOptionPane.showMessageDialog(null,	"Der Computer bestimmt die Farbkombination. Der Spieler versucht die Farbkombination zu erraten.","1-Spieler Modus", 0);
 			Mastermind spielereins = new Mastermind();			
 			auswahl1 = setComputerColors1();	
-			auswahl2 = setComputerColors2();
-			auswahl3 = setComputerColors3();
-			auswahl4 = setComputerColors4();
+			auswahl2 = setComputerColors1();
+			auswahl3 = setComputerColors1();
+			auswahl4 = setComputerColors1();
 			buttonsDisable(farbe1, farbe2, farbe3, farbe4);
 			buttonsNotVisible(farbe1, farbe2, farbe3, farbe4);
 			buttonsEnable(runde1bt1, runde1bt2, runde1bt3, runde1bt4);			
@@ -436,26 +558,32 @@ public class Ui extends Spiel implements ActionListener {
 			frame2.dispose();
 		}
 		
-		
-		if (source == retry) {		
-							
+		if (source == retry) {
+			buttonsDisable(runde9bt1, runde9bt2, runde9bt3, runde9bt4);
+			buttonsDisable(runde10bt1, runde10bt2, runde10bt3, runde10bt4);
+			buttonsDisable(runde11bt1, runde11bt2, runde11bt3, runde11bt4);
+			buttonsDisable(runde12bt1, runde12bt2, runde12bt3, runde12bt4);
 			buttonsDisable(runde8bt1, runde7bt1, runde4bt1, runde3bt1);
 			buttonsDisable(runde8bt2, runde7bt2, runde4bt2, runde3bt2);
 			buttonsDisable(runde8bt3, runde7bt3, runde4bt3, runde3bt3);
-			buttonsDisable(runde8bt4, runde7bt4, runde4bt4, runde3bt4);			
-			buttonsEnable(runde1bt1, runde1bt2, runde1bt3, runde1bt4);	
+			buttonsDisable(runde8bt4, runde7bt4, runde4bt4, runde3bt4);
+			buttonsEnable(runde1bt1, runde1bt2, runde1bt3, runde1bt4);
 			buttonsDisable(runde2bt1, runde2bt2, runde2bt3, runde2bt4);
 			buttonsDisable(runde5bt1, runde6bt1, runde5bt2, runde6bt2);
-			buttonsDisable(runde5bt4, runde6bt4, runde5bt3, runde6bt3);						
+			buttonsDisable(runde5bt4, runde6bt4, runde5bt3, runde6bt3);
 			resetColor(runde8bt1, runde7bt1, runde4bt1, runde3bt1);
 			resetColor(runde8bt2, runde7bt2, runde4bt2, runde3bt2);
 			resetColor(runde8bt3, runde7bt3, runde4bt3, runde3bt3);
-			resetColor(runde8bt4, runde7bt4, runde4bt4, runde3bt4);			
-			resetColor(runde1bt1, runde1bt2, runde1bt3, runde1bt4);	
+			resetColor(runde8bt4, runde7bt4, runde4bt4, runde3bt4);
+			resetColor(runde1bt1, runde1bt2, runde1bt3, runde1bt4);
 			resetColor(runde2bt1, runde2bt2, runde2bt3, runde2bt4);
 			resetColor(runde5bt1, runde6bt1, runde5bt2, runde6bt2);
-			resetColor(runde5bt3, runde6bt3, runde5bt4, runde6bt4);	
-			resetColor(farbe1, farbe2,farbe3, farbe4);
+			resetColor(runde5bt3, runde6bt3, runde5bt4, runde6bt4);
+			resetColor(runde9bt1, runde9bt2, runde9bt3, runde9bt4);
+			resetColor(runde10bt1, runde10bt2, runde10bt3, runde10bt4);
+			resetColor(runde11bt1, runde11bt2, runde11bt3, runde11bt4);
+			resetColor(runde12bt1, runde12bt2, runde12bt3, runde12bt4);
+			resetColor(farbe1, farbe2, farbe3, farbe4);
 			resetColor(zug01, zug02, zug03, zug04);
 			resetColor(zug11, zug12, zug13, zug14);
 			resetColor(zug21, zug22, zug23, zug24);
@@ -464,20 +592,24 @@ public class Ui extends Spiel implements ActionListener {
 			resetColor(zug51, zug52, zug53, zug54);
 			resetColor(zug61, zug62, zug63, zug64);
 			resetColor(zug71, zug72, zug73, zug74);
+			resetColor(zug81, zug82, zug83, zug84);
+			resetColor(zug91, zug92, zug93, zug94);
+			resetColor(zug101, zug102, zug103, zug104);
+			resetColor(zug111, zug112, zug113, zug114);
 			buttonsEnable(spiel);
-			spielRunde = 1;	
-			auswahl1 = setComputerColors1();	
-			auswahl2 = setComputerColors2();
-			auswahl3 = setComputerColors3();
-			auswahl4 = setComputerColors4();
+			spielRunde = 1;
+			auswahl1 = setComputerColors1();
+			auswahl2 = setComputerColors1();
+			auswahl3 = setComputerColors1();
+			auswahl4 = setComputerColors1();
 			radiobuttonComputerColor(farbe1, farbe2, farbe3, farbe4, auswahl1, auswahl2, auswahl3, auswahl4);
 			buttonsNotVisible(farbe1, farbe2, farbe3, farbe4);
-			if(einspieler == false){	
-			buttonsEnable(farbe1, farbe2, farbe3, farbe4);
-			buttonsVisible(farbe1, farbe2,farbe3, farbe4);
-			buttonsEnable(ausw‰hlen);
-			buttonsDisable(spiel);	
-			resetColor(farbe1, farbe2,farbe3, farbe4);
+			if (einspieler == false) {
+				buttonsEnable(farbe1, farbe2, farbe3, farbe4);
+				buttonsVisible(farbe1, farbe2, farbe3, farbe4);
+				buttonsEnable(ausw‰hlen);
+				buttonsDisable(spiel);
+				resetColor(farbe1, farbe2, farbe3, farbe4);
 			}
 		}
 		
@@ -508,53 +640,74 @@ public class Ui extends Spiel implements ActionListener {
 			zugFarbe3 = String.valueOf(getAuswahl(runde1bt3));
 			zugFarbe4 = String.valueOf(getAuswahl(runde1bt4));
 			anzahlFarbenComputer(auswahl1, auswahl2, auswahl3, auswahl4);
-			
-				
-				if (spielRunde == 1) {	
-					zugFarbe1 = String.valueOf(getAuswahl(runde1bt1));
-					zugFarbe2 = String.valueOf(getAuswahl(runde1bt2));
-					zugFarbe3 = String.valueOf(getAuswahl(runde1bt3));
-					zugFarbe4 = String.valueOf(getAuswahl(runde1bt4));
-					String ergebnis1 = runde1(auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe1);
-					String ergebnis2 = runde2(auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe2);
-					String ergebnis3 = runde3(auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe3);
-					String ergebnis4 = runde4(auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe4);					
-					setErgebnisColor(ergebnis1, ergebnis2, ergebnis3, ergebnis4, zug71, zug72,zug73, zug74);						
-					buttonsDisable(runde1bt1, runde1bt2, runde1bt3, runde1bt4);					
+						
+			if (spielRunde == 1) {
+				zugFarbe1 = String.valueOf(getAuswahl(runde1bt1));
+				zugFarbe2 = String.valueOf(getAuswahl(runde1bt2));
+				zugFarbe3 = String.valueOf(getAuswahl(runde1bt3));
+				zugFarbe4 = String.valueOf(getAuswahl(runde1bt4));
+				if (zugFarbe1 == "nichts" || zugFarbe2 == "nichts" || zugFarbe3 == "nichts" || zugFarbe4 == "nichts") {
+					JOptionPane.showMessageDialog(null, "Es wurden nicht alle Farben in der Farbkombination ausgewh‰lt",
+							"Fehler", 0);
+				} else {
+					anzahlFarbenComputer(auswahl1, auswahl2, auswahl3, auswahl4);
+					String ergebnis1 = runde1Schwarz(auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe1);
+					String ergebnis2 = runde2Schwarz(auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe2);
+					String ergebnis3 = runde3Schwarz(auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe3);
+					String ergebnis4 = runde4Schwarz(auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe4);
+					ergebnis1 = runde1Weiﬂ(ergebnis1, auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe1);
+					ergebnis2 = runde2Weiﬂ(ergebnis2, auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe2);
+					ergebnis3 = runde3Weiﬂ(ergebnis3, auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe3);
+					ergebnis4 = runde4Weiﬂ(ergebnis4, auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe4);
+					setErgebnisColor(ergebnis1, ergebnis2, ergebnis3, ergebnis4, zug71, zug72, zug73, zug74);
+					buttonsDisable(runde1bt1, runde1bt2, runde1bt3, runde1bt4);
 					spielRunde++;
-					gewonnen = gewonnen(ergebnis1, ergebnis2, ergebnis3,ergebnis4);
-					if (gewonnen == true){
-						if(showWert = false){
-							JOptionPane.showMessageDialog(null, "Sie haben gewonnen!", "Spielende", 0);
-							highscore +=50;
-						}else {
+					gewonnen = gewonnen(ergebnis1, ergebnis2, ergebnis3, ergebnis4);
+					if (gewonnen == true) {
+						if (showWert == false) {
+							JOptionPane.showMessageDialog(null, "Gewonnen!" + " Sie haben " + (spielRunde - 1)
+									+ " Spielrunde gebraucht und 300 Punkte erhalten!", "Spielende", 0);
+							highscore += 300;
+							score.setText(String.valueOf(highscore));
+						} else {
 							JOptionPane.showMessageDialog(null, "Game Over! Farben wurden aufgedeckt!", "Spielende", 0);
 						}
-						buttonsVisible(farbe1, farbe2,farbe3, farbe4);
+						buttonsVisible(farbe1, farbe2, farbe3, farbe4);
 						spielRunde = 0;
 						buttonsDisable(spiel);
-					}else{
-						buttonsEnable(runde2bt1,runde2bt2, runde2bt3, runde2bt4);
+					} else {
+						buttonsEnable(runde2bt1, runde2bt2, runde2bt3, runde2bt4);
 					}
-					
+
+				}
 				}
 				else if (spielRunde == 2) {			
 					zugFarbe1 = String.valueOf(getAuswahl(runde2bt1));
 					zugFarbe2 = String.valueOf(getAuswahl(runde2bt2));
 					zugFarbe3 = String.valueOf(getAuswahl(runde2bt3));
 					zugFarbe4 = String.valueOf(getAuswahl(runde2bt4));
-					String ergebnis1 = runde1(auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe1);
-					String ergebnis2 = runde2(auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe2);
-					String ergebnis3 = runde3(auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe3);
-					String ergebnis4 = runde4(auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe4);					
+					if (zugFarbe1 == "nichts" || zugFarbe2 == "nichts" || zugFarbe3 == "nichts" || zugFarbe4 == "nichts") {
+						JOptionPane.showMessageDialog(null, "Es wurden nicht alle Farben in der Farbkombination ausgewh‰lt",
+								"Fehler", 0);
+					} else {
+					anzahlFarbenComputer(auswahl1, auswahl2, auswahl3, auswahl4);
+					String ergebnis1 = runde1Schwarz(auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe1);
+					String ergebnis2 = runde2Schwarz(auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe2);
+					String ergebnis3 = runde3Schwarz(auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe3);
+					String ergebnis4 = runde4Schwarz(auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe4);					
+					ergebnis1 = runde1Weiﬂ(ergebnis1,auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe1);
+					ergebnis2 = runde2Weiﬂ(ergebnis2, auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe2);
+					ergebnis3 = runde3Weiﬂ(ergebnis3, auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe3);
+					ergebnis4 = runde4Weiﬂ(ergebnis4, auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe4);
 					setErgebnisColor(ergebnis1, ergebnis2, ergebnis3, ergebnis4, zug61, zug62,zug63, zug64);						
 					buttonsDisable(runde2bt1, runde2bt2, runde2bt3, runde2bt4);
 					spielRunde++;
 					gewonnen = gewonnen(ergebnis1, ergebnis2, ergebnis3,ergebnis4);
 					if (gewonnen == true){
-						if(showWert = false){
-							JOptionPane.showMessageDialog(null, "Sie haben gewonnen!", "Spielende", 0);
-							highscore +=50;
+						if(showWert == false){
+							JOptionPane.showMessageDialog(null, "Gewonnen!" + " Sie haben " + (spielRunde -1 )+ " Spielrunden gebraucht und 250 Punkte erhalten!", "Spielende", 0);
+							highscore +=250;
+							score.setText(String.valueOf(highscore));
 						}else {
 							JOptionPane.showMessageDialog(null, "Game Over! Farben wurden aufgedeckt!", "Spielende", 0);
 						}
@@ -563,6 +716,7 @@ public class Ui extends Spiel implements ActionListener {
 					}else{
 						buttonsEnable(runde3bt1,runde3bt2, runde3bt3, runde3bt4);
 					}
+				 }
 				}
 				
 				
@@ -571,18 +725,28 @@ public class Ui extends Spiel implements ActionListener {
 					zugFarbe2 = String.valueOf(getAuswahl(runde3bt2));
 					zugFarbe3 = String.valueOf(getAuswahl(runde3bt3));
 					zugFarbe4 = String.valueOf(getAuswahl(runde3bt4));
-					String ergebnis1 = runde1(auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe1);
-					String ergebnis2 = runde2(auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe2);
-					String ergebnis3 = runde3(auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe3);
-					String ergebnis4 = runde4(auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe4);					
+					if (zugFarbe1 == "nichts" || zugFarbe2 == "nichts" || zugFarbe3 == "nichts" || zugFarbe4 == "nichts") {
+						JOptionPane.showMessageDialog(null, "Es wurden nicht alle Farben in der Farbkombination ausgewh‰lt",
+								"Fehler", 0);
+					} else {
+					anzahlFarbenComputer(auswahl1, auswahl2, auswahl3, auswahl4);
+					String ergebnis1 = runde1Schwarz(auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe1);
+					String ergebnis2 = runde2Schwarz(auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe2);
+					String ergebnis3 = runde3Schwarz(auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe3);
+					String ergebnis4 = runde4Schwarz(auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe4);					
+					ergebnis1 = runde1Weiﬂ(ergebnis1,auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe1);
+					ergebnis2 = runde2Weiﬂ(ergebnis2, auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe2);
+					ergebnis3 = runde3Weiﬂ(ergebnis3, auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe3);
+					ergebnis4 = runde4Weiﬂ(ergebnis4, auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe4);
 					setErgebnisColor(ergebnis1, ergebnis2, ergebnis3, ergebnis4, zug51, zug52,zug53, zug54);						
 					buttonsDisable(runde3bt1, runde3bt2, runde3bt3, runde3bt4);					
 					spielRunde++;
 					gewonnen = gewonnen(ergebnis1, ergebnis2, ergebnis3,ergebnis4);
 					if (gewonnen == true){
-						if(showWert = false){
-							JOptionPane.showMessageDialog(null, "Sie haben gewonnen!", "Spielende", 0);
-							highscore +=50;
+						if(showWert == false){
+							JOptionPane.showMessageDialog(null, "Gewonnen!" + " Sie haben " + (spielRunde -1 )+ " Spielrunden gebraucht und 230 Punkte erhalten!", "Spielende", 0);
+							highscore +=230;
+							score.setText(String.valueOf(highscore));
 						}else {
 							JOptionPane.showMessageDialog(null, "Game Over! Farben wurden aufgedeckt!", "Spielende", 0);
 						}
@@ -591,6 +755,7 @@ public class Ui extends Spiel implements ActionListener {
 					}else{
 						buttonsEnable(runde4bt1, runde4bt2, runde4bt3, runde4bt4);
 					}
+			      }
 				}
 				
 				else if (spielRunde == 4) {				
@@ -598,18 +763,28 @@ public class Ui extends Spiel implements ActionListener {
 					zugFarbe2 = String.valueOf(getAuswahl(runde4bt2));
 					zugFarbe3 = String.valueOf(getAuswahl(runde4bt3));
 					zugFarbe4 = String.valueOf(getAuswahl(runde4bt4));					
-					String ergebnis1 = runde1(auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe1);
-					String ergebnis2 = runde2(auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe2);
-					String ergebnis3 = runde3(auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe3);
-					String ergebnis4 = runde4(auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe4);
+					anzahlFarbenComputer(auswahl1, auswahl2, auswahl3, auswahl4);
+					String ergebnis1 = runde1Schwarz(auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe1);
+					String ergebnis2 = runde2Schwarz(auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe2);
+					String ergebnis3 = runde3Schwarz(auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe3);
+					String ergebnis4 = runde4Schwarz(auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe4);
+					if (zugFarbe1 == "nichts" || zugFarbe2 == "nichts" || zugFarbe3 == "nichts" || zugFarbe4 == "nichts") {
+						JOptionPane.showMessageDialog(null, "Es wurden nicht alle Farben in der Farbkombination ausgewh‰lt",
+								"Fehler", 0);
+					} else {
+					ergebnis1 = runde1Weiﬂ(ergebnis1,auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe1);
+					ergebnis2 = runde2Weiﬂ(ergebnis2, auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe2);
+					ergebnis3 = runde3Weiﬂ(ergebnis3, auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe3);
+					ergebnis4 = runde4Weiﬂ(ergebnis4, auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe4);
 					setErgebnisColor(ergebnis1, ergebnis2, ergebnis3, ergebnis4, zug41, zug42, zug43, zug44);			
 					buttonsDisable(runde4bt1, runde4bt2, runde4bt3, runde4bt4);				
 					spielRunde++;
 					gewonnen = gewonnen(ergebnis1, ergebnis2, ergebnis3,ergebnis4);
 					if (gewonnen == true){
-						if(showWert = false){
-							JOptionPane.showMessageDialog(null, "Sie haben gewonnen!", "Spielende", 0);
-							highscore +=50;
+						if(showWert == false){
+							JOptionPane.showMessageDialog(null, "Gewonnen!" + " Sie haben " + (spielRunde -1 )+ " Spielrunden gebraucht und 210 Punkte erhalten!", "Spielende", 0);
+							highscore +=210;
+							score.setText(String.valueOf(highscore));
 						}else {
 							JOptionPane.showMessageDialog(null, "Game Over! Farben wurden aufgedeckt!", "Spielende", 0);
 						}
@@ -618,25 +793,35 @@ public class Ui extends Spiel implements ActionListener {
 					}else{
 						buttonsEnable(runde5bt1, runde5bt2, runde5bt3, runde5bt4);
 					}
-				}		
-				
+			   	}		
+				}
 				else if (spielRunde == 5) {
 					zugFarbe1 = String.valueOf(getAuswahl(runde5bt1));
 					zugFarbe2 = String.valueOf(getAuswahl(runde5bt2));
 					zugFarbe3 = String.valueOf(getAuswahl(runde5bt3));
 					zugFarbe4 = String.valueOf(getAuswahl(runde5bt4));					
-					String ergebnis1 = runde1(auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe1);
-					String ergebnis2 = runde2(auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe2);
-					String ergebnis3 = runde3(auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe3);
-					String ergebnis4 = runde4(auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe4);
+					anzahlFarbenComputer(auswahl1, auswahl2, auswahl3, auswahl4);
+					String ergebnis1 = runde1Schwarz(auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe1);
+					String ergebnis2 = runde2Schwarz(auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe2);
+					String ergebnis3 = runde3Schwarz(auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe3);
+					String ergebnis4 = runde4Schwarz(auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe4);
+					if (zugFarbe1 == "nichts" || zugFarbe2 == "nichts" || zugFarbe3 == "nichts" || zugFarbe4 == "nichts") {
+						JOptionPane.showMessageDialog(null, "Es wurden nicht alle Farben in der Farbkombination ausgewh‰lt",
+								"Fehler", 0);
+					} else {
+					ergebnis1 = runde1Weiﬂ(ergebnis1,auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe1);
+					ergebnis2 = runde2Weiﬂ(ergebnis2, auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe2);
+					ergebnis3 = runde3Weiﬂ(ergebnis3, auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe3);
+					ergebnis4 = runde4Weiﬂ(ergebnis4, auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe4);
 					setErgebnisColor(ergebnis1, ergebnis2, ergebnis3, ergebnis4, zug31, zug32, zug33, zug34);			
 					buttonsDisable(runde5bt1, runde5bt2, runde5bt3, runde5bt4);								
 					spielRunde++;
 					gewonnen = gewonnen(ergebnis1, ergebnis2, ergebnis3,ergebnis4);
 					if (gewonnen == true){
-						if(showWert = false){
-							JOptionPane.showMessageDialog(null, "Sie haben gewonnen!", "Spielende", 0);
-							highscore +=50;
+						if(showWert == false){
+							JOptionPane.showMessageDialog(null, "Gewonnen!" + " Sie haben " + (spielRunde -1 )+ " Spielrunden gebraucht und 190 Punkte erhalten!", "Spielende", 0);
+							highscore +=190;
+							score.setText(String.valueOf(highscore));
 						}else {
 							JOptionPane.showMessageDialog(null, "Game Over! Farben wurden aufgedeckt!", "Spielende", 0);
 						}
@@ -646,24 +831,35 @@ public class Ui extends Spiel implements ActionListener {
 						buttonsEnable(runde6bt1, runde6bt2, runde6bt3, runde6bt4);
 					}
 				}		
+				}
 				
 				else if (spielRunde == 6) {
 					zugFarbe1 = String.valueOf(getAuswahl(runde6bt1));
 					zugFarbe2 = String.valueOf(getAuswahl(runde6bt2));
 					zugFarbe3 = String.valueOf(getAuswahl(runde6bt3));
 					zugFarbe4 = String.valueOf(getAuswahl(runde6bt4));					
-					String ergebnis1 = runde1(auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe1);
-					String ergebnis2 = runde2(auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe2);
-					String ergebnis3 = runde3(auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe3);
-					String ergebnis4 = runde4(auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe4);
+					anzahlFarbenComputer(auswahl1, auswahl2, auswahl3, auswahl4);
+					String ergebnis1 = runde1Schwarz(auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe1);
+					String ergebnis2 = runde2Schwarz(auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe2);
+					String ergebnis3 = runde3Schwarz(auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe3);
+					String ergebnis4 = runde4Schwarz(auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe4);
+					if (zugFarbe1 == "nichts" || zugFarbe2 == "nichts" || zugFarbe3 == "nichts" || zugFarbe4 == "nichts") {
+						JOptionPane.showMessageDialog(null, "Es wurden nicht alle Farben in der Farbkombination ausgewh‰lt",
+								"Fehler", 0);
+					} else {
+					ergebnis1 = runde1Weiﬂ(ergebnis1,auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe1);
+					ergebnis2 = runde2Weiﬂ(ergebnis2, auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe2);
+					ergebnis3 = runde3Weiﬂ(ergebnis3, auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe3);
+					ergebnis4 = runde4Weiﬂ(ergebnis4, auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe4);
 					setErgebnisColor(ergebnis1, ergebnis2, ergebnis3, ergebnis4, zug21, zug22, zug23, zug24);			
 					buttonsDisable(runde6bt1, runde6bt2, runde6bt3, runde6bt4);				
 					spielRunde++;
 					gewonnen = gewonnen(ergebnis1, ergebnis2, ergebnis3,ergebnis4);
 					if (gewonnen == true){
-						if(showWert = false){
-							JOptionPane.showMessageDialog(null, "Sie haben gewonnen!", "Spielende", 0);
-							highscore +=50;
+						if(showWert == false){
+							JOptionPane.showMessageDialog(null, "Gewonnen!" + " Sie haben " + (spielRunde -1 )+ " Spielrunden gebraucht und 170 Punkte erhalten!", "Spielende", 0);
+							highscore +=170;
+							score.setText(String.valueOf(highscore));
 						}else {
 							JOptionPane.showMessageDialog(null, "Game Over! Farben wurden aufgedeckt!", "Spielende", 0);
 						}
@@ -672,24 +868,35 @@ public class Ui extends Spiel implements ActionListener {
 					}else{
 						buttonsEnable(runde7bt1, runde7bt2, runde7bt3, runde7bt4);
 					}
+					}
 				}		
 				else if (spielRunde == 7) {
 					zugFarbe1 = String.valueOf(getAuswahl(runde7bt1));
 					zugFarbe2 = String.valueOf(getAuswahl(runde7bt2));
 					zugFarbe3 = String.valueOf(getAuswahl(runde7bt3));
-					zugFarbe4 = String.valueOf(getAuswahl(runde7bt4));					
-					String ergebnis1 = runde1(auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe1);
-					String ergebnis2 = runde2(auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe2);
-					String ergebnis3 = runde3(auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe3);
-					String ergebnis4 = runde4(auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe4);
+					zugFarbe4 = String.valueOf(getAuswahl(runde7bt4));			
+					if (zugFarbe1 == "nichts" || zugFarbe2 == "nichts" || zugFarbe3 == "nichts" || zugFarbe4 == "nichts") {
+						JOptionPane.showMessageDialog(null, "Es wurden nicht alle Farben in der Farbkombination ausgewh‰lt",
+								"Fehler", 0);
+					} else {
+					anzahlFarbenComputer(auswahl1, auswahl2, auswahl3, auswahl4);
+					String ergebnis1 = runde1Schwarz(auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe1);
+					String ergebnis2 = runde2Schwarz(auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe2);
+					String ergebnis3 = runde3Schwarz(auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe3);
+					String ergebnis4 = runde4Schwarz(auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe4);
+					ergebnis1 = runde1Weiﬂ(ergebnis1,auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe1);
+					ergebnis2 = runde2Weiﬂ(ergebnis2, auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe2);
+					ergebnis3 = runde3Weiﬂ(ergebnis3, auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe3);
+					ergebnis4 = runde4Weiﬂ(ergebnis4, auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe4);
 					setErgebnisColor(ergebnis1, ergebnis2, ergebnis3, ergebnis4, zug11, zug12, zug13, zug14);			
 					buttonsDisable(runde7bt1, runde7bt2, runde7bt3, runde7bt4);					
 					spielRunde++;
 					gewonnen = gewonnen(ergebnis1, ergebnis2, ergebnis3,ergebnis4);
 					if (gewonnen == true){
-						if(showWert = false){
-							JOptionPane.showMessageDialog(null, "Sie haben gewonnen!", "Spielende", 0);
-							highscore +=50;
+						if(showWert == false){
+							JOptionPane.showMessageDialog(null, "Gewonnen!" + " Sie haben " + (spielRunde -1 )+ " Spielrunden gebraucht und 150 Punkte erhalten!", "Spielende", 0);
+							highscore +=150;
+							score.setText(String.valueOf(highscore));
 						}else {
 							JOptionPane.showMessageDialog(null, "Game Over! Farben wurden aufgedeckt!", "Spielende", 0);
 						}
@@ -698,36 +905,198 @@ public class Ui extends Spiel implements ActionListener {
 					}else{
 						buttonsEnable(runde8bt1, runde8bt2, runde8bt3, runde8bt4);
 					}
-				}		
+				}	
+				}
 				else if (spielRunde == 8) {
 					zugFarbe1 = String.valueOf(getAuswahl(runde8bt1));
 					zugFarbe2 = String.valueOf(getAuswahl(runde8bt2));
 					zugFarbe3 = String.valueOf(getAuswahl(runde8bt3));
-					zugFarbe4 = String.valueOf(getAuswahl(runde8bt4));					
-					String ergebnis1 = runde1(auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe1);
-					String ergebnis2 = runde2(auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe2);
-					String ergebnis3 = runde3(auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe3);
-					String ergebnis4 = runde4(auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe4);
+					zugFarbe4 = String.valueOf(getAuswahl(runde8bt4));	
+					if (zugFarbe1 == "nichts" || zugFarbe2 == "nichts" || zugFarbe3 == "nichts" || zugFarbe4 == "nichts") {
+						JOptionPane.showMessageDialog(null, "Es wurden nicht alle Farben in der Farbkombination ausgewh‰lt",
+								"Fehler", 0);
+					} else {
+					anzahlFarbenComputer(auswahl1, auswahl2, auswahl3, auswahl4);
+					String ergebnis1 = runde1Schwarz(auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe1);
+					String ergebnis2 = runde2Schwarz(auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe2);
+					String ergebnis3 = runde3Schwarz(auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe3);
+					String ergebnis4 = runde4Schwarz(auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe4);
+					ergebnis1 = runde1Weiﬂ(ergebnis1,auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe1);
+					ergebnis2 = runde2Weiﬂ(ergebnis2, auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe2);
+					ergebnis3 = runde3Weiﬂ(ergebnis3, auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe3);
+					ergebnis4 = runde4Weiﬂ(ergebnis4, auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe4);
 					setErgebnisColor(ergebnis1, ergebnis2, ergebnis3, ergebnis4, zug01, zug02, zug03, zug04);			
 					buttonsDisable(runde8bt1, runde8bt2, runde8bt3, runde8bt4);						
 					spielRunde++;
 					gewonnen = gewonnen(ergebnis1, ergebnis2, ergebnis3,ergebnis4);
 					if (gewonnen == true){
-						if(showWert = false){
-							JOptionPane.showMessageDialog(null, "Sie haben gewonnen!", "Spielende", 0);
-							highscore +=50;
+						if(showWert == false){
+							JOptionPane.showMessageDialog(null, "Gewonnen!" + " Sie haben " + (spielRunde -1 )+ " Spielrunden gebraucht und 130 Punkte erhalten!", "Spielende", 0);
+							highscore +=130;
+							score.setText(String.valueOf(highscore));
 						}else {
 							JOptionPane.showMessageDialog(null, "Game Over! Farben wurden aufgedeckt!", "Spielende", 0);
 						}
 						buttonsVisible(farbe1, farbe2,farbe3, farbe4);
 						spielRunde = 0;
 					}else{
+						buttonsEnable(runde9bt1, runde9bt2, runde9bt3, runde9bt4);
+											}
+					}
+				}	else if (spielRunde == 9){
+					zugFarbe1 = String.valueOf(getAuswahl(runde9bt1));
+					zugFarbe2 = String.valueOf(getAuswahl(runde9bt2));
+					zugFarbe3 = String.valueOf(getAuswahl(runde9bt3));
+					zugFarbe4 = String.valueOf(getAuswahl(runde9bt4));	
+					if (zugFarbe1 == "nichts" || zugFarbe2 == "nichts" || zugFarbe3 == "nichts" || zugFarbe4 == "nichts") {
+						JOptionPane.showMessageDialog(null, "Es wurden nicht alle Farben in der Farbkombination ausgewh‰lt",
+								"Fehler", 0);
+					} else {
+					anzahlFarbenComputer(auswahl1, auswahl2, auswahl3, auswahl4);
+					String ergebnis1 = runde1Schwarz(auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe1);
+					String ergebnis2 = runde2Schwarz(auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe2);
+					String ergebnis3 = runde3Schwarz(auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe3);
+					String ergebnis4 = runde4Schwarz(auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe4);
+					ergebnis1 = runde1Weiﬂ(ergebnis1,auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe1);
+					ergebnis2 = runde2Weiﬂ(ergebnis2, auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe2);
+					ergebnis3 = runde3Weiﬂ(ergebnis3, auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe3);
+					ergebnis4 = runde4Weiﬂ(ergebnis4, auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe4);
+					setErgebnisColor(ergebnis1, ergebnis2, ergebnis3, ergebnis4, zug81, zug82, zug83, zug84);			
+					buttonsDisable(runde9bt1, runde9bt2, runde9bt3, runde9bt4);						
+					spielRunde++;
+					gewonnen = gewonnen(ergebnis1, ergebnis2, ergebnis3,ergebnis4);
+					if (gewonnen == true){
+						if(showWert == false){
+							JOptionPane.showMessageDialog(null, "Gewonnen!" + " Sie haben " + (spielRunde -1 )+ " Spielrunden gebraucht und 110 Punkte erhalten!", "Spielende", 0);
+							highscore +=110;
+							score.setText(String.valueOf(highscore));
+						}else {
+							JOptionPane.showMessageDialog(null, "Game Over! Farben wurden aufgedeckt!", "Spielende", 0);
+						}
+						buttonsVisible(farbe1, farbe2,farbe3, farbe4);
+						spielRunde = 0;
+					}else{
+						buttonsEnable(runde10bt1, runde10bt2, runde10bt3, runde10bt4);
+						
+						}
+					}
+					
+					
+				}else if (spielRunde == 10){
+					zugFarbe1 = String.valueOf(getAuswahl(runde10bt1));
+					zugFarbe2 = String.valueOf(getAuswahl(runde10bt2));
+					zugFarbe3 = String.valueOf(getAuswahl(runde10bt3));
+					zugFarbe4 = String.valueOf(getAuswahl(runde10bt4));		
+					if (zugFarbe1 == "nichts" || zugFarbe2 == "nichts" || zugFarbe3 == "nichts" || zugFarbe4 == "nichts") {
+						JOptionPane.showMessageDialog(null, "Es wurden nicht alle Farben in der Farbkombination ausgewh‰lt",
+								"Fehler", 0);
+					} else {
+					anzahlFarbenComputer(auswahl1, auswahl2, auswahl3, auswahl4);
+					String ergebnis1 = runde1Schwarz(auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe1);
+					String ergebnis2 = runde2Schwarz(auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe2);
+					String ergebnis3 = runde3Schwarz(auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe3);
+					String ergebnis4 = runde4Schwarz(auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe4);
+					ergebnis1 = runde1Weiﬂ(ergebnis1,auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe1);
+					ergebnis2 = runde2Weiﬂ(ergebnis2, auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe2);
+					ergebnis3 = runde3Weiﬂ(ergebnis3, auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe3);
+					ergebnis4 = runde4Weiﬂ(ergebnis4, auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe4);
+					setErgebnisColor(ergebnis1, ergebnis2, ergebnis3, ergebnis4, zug91, zug92, zug93, zug94);			
+					buttonsDisable(runde10bt1, runde10bt2, runde10bt3, runde10bt4);						
+					spielRunde++;
+					gewonnen = gewonnen(ergebnis1, ergebnis2, ergebnis3,ergebnis4);
+					if (gewonnen == true){
+						if(showWert == false){
+							JOptionPane.showMessageDialog(null, "Gewonnen!" + " Sie haben " + (spielRunde -1 )+ " Spielrunden gebraucht und 90 Punkte erhalten!", "Spielende", 0);
+							highscore +=90;
+							score.setText(String.valueOf(highscore));
+						}else {
+							JOptionPane.showMessageDialog(null, "Game Over! Farben wurden aufgedeckt!", "Spielende", 0);
+						}
+						buttonsVisible(farbe1, farbe2,farbe3, farbe4);
+						spielRunde = 0;
+					}else{
+						buttonsEnable(runde11bt1, runde11bt2, runde11bt3, runde11bt4);
+											
+					}
+					}
+					
+				}else if (spielRunde == 11){
+					zugFarbe1 = String.valueOf(getAuswahl(runde11bt1));
+					zugFarbe2 = String.valueOf(getAuswahl(runde11bt2));
+					zugFarbe3 = String.valueOf(getAuswahl(runde11bt3));
+					zugFarbe4 = String.valueOf(getAuswahl(runde11bt4));			
+					if (zugFarbe1 == "nichts" || zugFarbe2 == "nichts" || zugFarbe3 == "nichts" || zugFarbe4 == "nichts") {
+						JOptionPane.showMessageDialog(null, "Es wurden nicht alle Farben in der Farbkombination ausgewh‰lt",
+								"Fehler", 0);
+					} else {
+					anzahlFarbenComputer(auswahl1, auswahl2, auswahl3, auswahl4);
+					String ergebnis1 = runde1Schwarz(auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe1);
+					String ergebnis2 = runde2Schwarz(auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe2);
+					String ergebnis3 = runde3Schwarz(auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe3);
+					String ergebnis4 = runde4Schwarz(auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe4);
+					ergebnis1 = runde1Weiﬂ(ergebnis1,auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe1);
+					ergebnis2 = runde2Weiﬂ(ergebnis2, auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe2);
+					ergebnis3 = runde3Weiﬂ(ergebnis3, auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe3);
+					ergebnis4 = runde4Weiﬂ(ergebnis4, auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe4);
+					setErgebnisColor(ergebnis1, ergebnis2, ergebnis3, ergebnis4, zug101, zug102, zug103, zug104);			
+					buttonsDisable(runde11bt1, runde11bt2, runde11bt3, runde11bt4);						
+					spielRunde++;
+					gewonnen = gewonnen(ergebnis1, ergebnis2, ergebnis3,ergebnis4);
+					if (gewonnen == true){
+						if(showWert == false){
+							JOptionPane.showMessageDialog(null, "Gewonnen!" + " Sie haben " + (spielRunde -1 )+ " Spielrunden gebraucht und 70 Punkte erhalten!", "Spielende", 0);
+							highscore +=70;
+							score.setText(String.valueOf(highscore));
+						}else {
+							JOptionPane.showMessageDialog(null, "Game Over! Farben wurden aufgedeckt!", "Spielende", 0);
+						}
+						buttonsVisible(farbe1, farbe2,farbe3, farbe4);
+						spielRunde = 0;
+					}else{
+						buttonsEnable(runde12bt1, runde12bt2, runde12bt3, runde12bt4);
+					}
+						
+					}
+				}else if (spielRunde == 12){
+					zugFarbe1 = String.valueOf(getAuswahl(runde12bt1));
+					zugFarbe2 = String.valueOf(getAuswahl(runde12bt2));
+					zugFarbe3 = String.valueOf(getAuswahl(runde12bt3));
+					zugFarbe4 = String.valueOf(getAuswahl(runde12bt4));	
+					if (zugFarbe1 == "nichts" || zugFarbe2 == "nichts" || zugFarbe3 == "nichts" || zugFarbe4 == "nichts") {
+						JOptionPane.showMessageDialog(null, "Es wurden nicht alle Farben in der Farbkombination ausgewh‰lt",
+								"Fehler", 0);
+					} else {
+					anzahlFarbenComputer(auswahl1, auswahl2, auswahl3, auswahl4);
+					String ergebnis1 = runde1Schwarz(auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe1);
+					String ergebnis2 = runde2Schwarz(auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe2);
+					String ergebnis3 = runde3Schwarz(auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe3);
+					String ergebnis4 = runde4Schwarz(auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe4);
+					ergebnis1 = runde1Weiﬂ(ergebnis1,auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe1);
+					ergebnis2 = runde2Weiﬂ(ergebnis2, auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe2);
+					ergebnis3 = runde3Weiﬂ(ergebnis3, auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe3);
+					ergebnis4 = runde4Weiﬂ(ergebnis4, auswahl1, auswahl2, auswahl3, auswahl4, zugFarbe4);
+					setErgebnisColor(ergebnis1, ergebnis2, ergebnis3, ergebnis4, zug111, zug112, zug113, zug114);			
+					buttonsDisable(runde12bt1, runde12bt2, runde12bt3, runde12bt4);						
+					spielRunde++;
+					gewonnen = gewonnen(ergebnis1, ergebnis2, ergebnis3,ergebnis4);
+					if (gewonnen == true){
+						if(showWert == false){
+							JOptionPane.showMessageDialog(null, "Gewonnen!" + " Sie haben " + (spielRunde -1 )+ " Spielrunden gebraucht und 50 Punkte erhalten!", "Spielende", 0);
+							highscore +=50;
+							score.setText(String.valueOf(highscore));
+						}else {
+							JOptionPane.showMessageDialog(null, "Game Over! Farben wurden aufgedeckt!", "Spielende", 0);
+						}
+						buttonsVisible(farbe1, farbe2,farbe3, farbe4);
+						spielRunde = 0;
+					}else{									
 						JOptionPane.showMessageDialog(null, "Game Over! Keine Z¸ge mehr!", "Spielende", 0);
 						buttonsVisible(farbe1, farbe2,farbe3, farbe4);
 						spielRunde = 0;
 						
 					}
-				}		
+				}
+				}
 
 			}
 
@@ -904,7 +1273,55 @@ public class Ui extends Spiel implements ActionListener {
 			if (button == runde2bt4) {
 				buttonColor(red5, blue5, black5, green5, white5, yell5, runde2bt4);
 
-		}
+			}
+			if (button == runde9bt4) {
+				buttonColor(red5, blue5, black5, green5, white5, yell5, runde9bt4);
+			}
+			if (button == runde9bt3) {
+				buttonColor(red5, blue5, black5, green5, white5, yell5, runde9bt3);
+			}
+			if (button == runde9bt2) {
+				buttonColor(red5, blue5, black5, green5, white5, yell5, runde9bt2);
+			}
+			if (button == runde9bt1) {
+				buttonColor(red5, blue5, black5, green5, white5, yell5, runde9bt1);
+			}
+			if (button == runde10bt4) {
+				buttonColor(red5, blue5, black5, green5, white5, yell5, runde10bt4);
+			}
+			if (button == runde10bt3) {
+				buttonColor(red5, blue5, black5, green5, white5, yell5, runde10bt3);
+			}
+			if (button == runde10bt2) {
+				buttonColor(red5, blue5, black5, green5, white5, yell5, runde10bt2);
+			}
+			if (button == runde10bt1) {
+				buttonColor(red5, blue5, black5, green5, white5, yell5, runde10bt1);
+			}
+			if (button == runde11bt4) {
+				buttonColor(red5, blue5, black5, green5, white5, yell5, runde11bt4);
+			}
+			if (button == runde11bt3) {
+				buttonColor(red5, blue5, black5, green5, white5, yell5, runde11bt3);
+			}
+			if (button == runde11bt2) {
+				buttonColor(red5, blue5, black5, green5, white5, yell5, runde11bt2);
+			}
+			if (button == runde11bt1) {
+				buttonColor(red5, blue5, black5, green5, white5, yell5, runde11bt1);
+			}
+			if (button == runde12bt4) {
+				buttonColor(red5, blue5, black5, green5, white5, yell5, runde12bt4);
+			}
+			if (button == runde12bt3) {
+				buttonColor(red5, blue5, black5, green5, white5, yell5, runde12bt3);
+			}
+			if (button == runde12bt2) {
+				buttonColor(red5, blue5, black5, green5, white5, yell5, runde12bt2);
+			}
+			if (button == runde12bt1) {
+				buttonColor(red5, blue5, black5, green5, white5, yell5, runde12bt1);
+			}
 		}
 			
 

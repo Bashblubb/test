@@ -597,6 +597,7 @@ public class Ui extends Spiel implements ActionListener {
 			resetColor(zug101, zug102, zug103, zug104);
 			resetColor(zug111, zug112, zug113, zug114);
 			buttonsEnable(spiel);
+			buttonsEnable(show);
 			spielRunde = 1;
 			auswahl1 = setComputerColors1();
 			auswahl2 = setComputerColors1();
@@ -621,7 +622,7 @@ public class Ui extends Spiel implements ActionListener {
 			auswahl3 = String.valueOf(getAuswahl(farbe3));
 			auswahl4 = String.valueOf(getAuswahl(farbe4));
 			if (auswahl1 == "nichts" || auswahl2 == "nichts" || auswahl3 == "nichts" || auswahl4 == "nichts" ) {
-					JOptionPane.showMessageDialog(null, "Es wurden nicht alle Farben in der Farbkombination ausgewhält", "Fehler", 0);
+					JOptionPane.showMessageDialog(null, "Es wurden nicht alle Farben in der Farbkombination ausgewhält.", "Fehler", 0);
 			} else {
 
 				auswählen.setEnabled(false);
@@ -635,19 +636,14 @@ public class Ui extends Spiel implements ActionListener {
 
 		if (source == spiel) {
 
-			zugFarbe1 = String.valueOf(getAuswahl(runde1bt1));
-			zugFarbe2 = String.valueOf(getAuswahl(runde1bt2));
-			zugFarbe3 = String.valueOf(getAuswahl(runde1bt3));
-			zugFarbe4 = String.valueOf(getAuswahl(runde1bt4));
-			anzahlFarbenComputer(auswahl1, auswahl2, auswahl3, auswahl4);
-						
+
 			if (spielRunde == 1) {
-				zugFarbe1 = String.valueOf(getAuswahl(runde1bt1));
+				zugFarbe1 = getAuswahl(runde1bt1);
 				zugFarbe2 = String.valueOf(getAuswahl(runde1bt2));
 				zugFarbe3 = String.valueOf(getAuswahl(runde1bt3));
 				zugFarbe4 = String.valueOf(getAuswahl(runde1bt4));
 				if (zugFarbe1 == "nichts" || zugFarbe2 == "nichts" || zugFarbe3 == "nichts" || zugFarbe4 == "nichts") {
-					JOptionPane.showMessageDialog(null, "Es wurden nicht alle Farben in der Farbkombination ausgewhält",
+					JOptionPane.showMessageDialog(null, "Es wurden nicht alle Farben ausgewhält.",
 							"Fehler", 0);
 				} else {
 					anzahlFarbenComputer(auswahl1, auswahl2, auswahl3, auswahl4);
@@ -669,8 +665,10 @@ public class Ui extends Spiel implements ActionListener {
 									+ " Spielrunde gebraucht und 300 Punkte erhalten!", "Spielende", 0);
 							highscore += 300;
 							score.setText(String.valueOf(highscore));
+							buttonsDisable(spiel,show);
 						} else {
 							JOptionPane.showMessageDialog(null, "Game Over! Farben wurden aufgedeckt!", "Spielende", 0);
+							buttonsDisable(spiel,show);
 						}
 						buttonsVisible(farbe1, farbe2, farbe3, farbe4);
 						spielRunde = 0;
@@ -708,8 +706,10 @@ public class Ui extends Spiel implements ActionListener {
 							JOptionPane.showMessageDialog(null, "Gewonnen!" + " Sie haben " + (spielRunde -1 )+ " Spielrunden gebraucht und 250 Punkte erhalten!", "Spielende", 0);
 							highscore +=250;
 							score.setText(String.valueOf(highscore));
+							buttonsDisable(spiel,show);
 						}else {
 							JOptionPane.showMessageDialog(null, "Game Over! Farben wurden aufgedeckt!", "Spielende", 0);
+							buttonsDisable(spiel,show);
 						}
 						buttonsVisible(farbe1, farbe2,farbe3, farbe4);
 						spielRunde = 0;
@@ -747,8 +747,10 @@ public class Ui extends Spiel implements ActionListener {
 							JOptionPane.showMessageDialog(null, "Gewonnen!" + " Sie haben " + (spielRunde -1 )+ " Spielrunden gebraucht und 230 Punkte erhalten!", "Spielende", 0);
 							highscore +=230;
 							score.setText(String.valueOf(highscore));
+							buttonsDisable(spiel,show);
 						}else {
 							JOptionPane.showMessageDialog(null, "Game Over! Farben wurden aufgedeckt!", "Spielende", 0);
+							buttonsDisable(spiel,show);
 						}
 						buttonsVisible(farbe1, farbe2,farbe3, farbe4);
 						spielRunde = 0;
@@ -785,8 +787,10 @@ public class Ui extends Spiel implements ActionListener {
 							JOptionPane.showMessageDialog(null, "Gewonnen!" + " Sie haben " + (spielRunde -1 )+ " Spielrunden gebraucht und 210 Punkte erhalten!", "Spielende", 0);
 							highscore +=210;
 							score.setText(String.valueOf(highscore));
+							buttonsDisable(spiel,show);
 						}else {
 							JOptionPane.showMessageDialog(null, "Game Over! Farben wurden aufgedeckt!", "Spielende", 0);
+							buttonsDisable(spiel,show);
 						}
 						buttonsVisible(farbe1, farbe2,farbe3, farbe4);
 						spielRunde = 0;
@@ -822,8 +826,10 @@ public class Ui extends Spiel implements ActionListener {
 							JOptionPane.showMessageDialog(null, "Gewonnen!" + " Sie haben " + (spielRunde -1 )+ " Spielrunden gebraucht und 190 Punkte erhalten!", "Spielende", 0);
 							highscore +=190;
 							score.setText(String.valueOf(highscore));
+							buttonsDisable(spiel,show);
 						}else {
 							JOptionPane.showMessageDialog(null, "Game Over! Farben wurden aufgedeckt!", "Spielende", 0);
+							buttonsDisable(spiel,show);
 						}
 						buttonsVisible(farbe1, farbe2,farbe3, farbe4);
 						spielRunde = 0;
@@ -860,8 +866,10 @@ public class Ui extends Spiel implements ActionListener {
 							JOptionPane.showMessageDialog(null, "Gewonnen!" + " Sie haben " + (spielRunde -1 )+ " Spielrunden gebraucht und 170 Punkte erhalten!", "Spielende", 0);
 							highscore +=170;
 							score.setText(String.valueOf(highscore));
+							buttonsDisable(spiel,show);
 						}else {
 							JOptionPane.showMessageDialog(null, "Game Over! Farben wurden aufgedeckt!", "Spielende", 0);
+							buttonsDisable(spiel,show);
 						}
 						buttonsVisible(farbe1, farbe2,farbe3, farbe4);
 						spielRunde = 0;
@@ -897,8 +905,10 @@ public class Ui extends Spiel implements ActionListener {
 							JOptionPane.showMessageDialog(null, "Gewonnen!" + " Sie haben " + (spielRunde -1 )+ " Spielrunden gebraucht und 150 Punkte erhalten!", "Spielende", 0);
 							highscore +=150;
 							score.setText(String.valueOf(highscore));
+							buttonsDisable(spiel,show);
 						}else {
 							JOptionPane.showMessageDialog(null, "Game Over! Farben wurden aufgedeckt!", "Spielende", 0);
+							buttonsDisable(spiel,show);
 						}
 						buttonsVisible(farbe1, farbe2,farbe3, farbe4);
 						spielRunde = 0;
@@ -934,8 +944,10 @@ public class Ui extends Spiel implements ActionListener {
 							JOptionPane.showMessageDialog(null, "Gewonnen!" + " Sie haben " + (spielRunde -1 )+ " Spielrunden gebraucht und 130 Punkte erhalten!", "Spielende", 0);
 							highscore +=130;
 							score.setText(String.valueOf(highscore));
+							buttonsDisable(spiel,show);
 						}else {
 							JOptionPane.showMessageDialog(null, "Game Over! Farben wurden aufgedeckt!", "Spielende", 0);
+							buttonsDisable(spiel,show);
 						}
 						buttonsVisible(farbe1, farbe2,farbe3, farbe4);
 						spielRunde = 0;
@@ -970,8 +982,10 @@ public class Ui extends Spiel implements ActionListener {
 							JOptionPane.showMessageDialog(null, "Gewonnen!" + " Sie haben " + (spielRunde -1 )+ " Spielrunden gebraucht und 110 Punkte erhalten!", "Spielende", 0);
 							highscore +=110;
 							score.setText(String.valueOf(highscore));
+							buttonsDisable(spiel,show);
 						}else {
 							JOptionPane.showMessageDialog(null, "Game Over! Farben wurden aufgedeckt!", "Spielende", 0);
+							buttonsDisable(spiel,show);
 						}
 						buttonsVisible(farbe1, farbe2,farbe3, farbe4);
 						spielRunde = 0;
@@ -1009,8 +1023,10 @@ public class Ui extends Spiel implements ActionListener {
 							JOptionPane.showMessageDialog(null, "Gewonnen!" + " Sie haben " + (spielRunde -1 )+ " Spielrunden gebraucht und 90 Punkte erhalten!", "Spielende", 0);
 							highscore +=90;
 							score.setText(String.valueOf(highscore));
+							buttonsDisable(spiel,show);
 						}else {
 							JOptionPane.showMessageDialog(null, "Game Over! Farben wurden aufgedeckt!", "Spielende", 0);
+							buttonsDisable(spiel,show);
 						}
 						buttonsVisible(farbe1, farbe2,farbe3, farbe4);
 						spielRunde = 0;
@@ -1047,8 +1063,10 @@ public class Ui extends Spiel implements ActionListener {
 							JOptionPane.showMessageDialog(null, "Gewonnen!" + " Sie haben " + (spielRunde -1 )+ " Spielrunden gebraucht und 70 Punkte erhalten!", "Spielende", 0);
 							highscore +=70;
 							score.setText(String.valueOf(highscore));
+							buttonsDisable(spiel,show);
 						}else {
 							JOptionPane.showMessageDialog(null, "Game Over! Farben wurden aufgedeckt!", "Spielende", 0);
+							buttonsDisable(spiel,show);
 						}
 						buttonsVisible(farbe1, farbe2,farbe3, farbe4);
 						spielRunde = 0;
@@ -1084,8 +1102,10 @@ public class Ui extends Spiel implements ActionListener {
 							JOptionPane.showMessageDialog(null, "Gewonnen!" + " Sie haben " + (spielRunde -1 )+ " Spielrunden gebraucht und 50 Punkte erhalten!", "Spielende", 0);
 							highscore +=50;
 							score.setText(String.valueOf(highscore));
+							buttonsDisable(spiel,show);
 						}else {
 							JOptionPane.showMessageDialog(null, "Game Over! Farben wurden aufgedeckt!", "Spielende", 0);
+							buttonsDisable(spiel,show);
 						}
 						buttonsVisible(farbe1, farbe2,farbe3, farbe4);
 						spielRunde = 0;

@@ -89,6 +89,13 @@ public class Spiel {
 	
 	}
 	
+	public static void buttonsDisable(JButton button1, JButton button2) {
+
+		button1.setEnabled(false);
+		button2.setEnabled(false);
+	
+	}
+	
 	public static void anzahlFarbenComputer(String auswahl1, String auswahl2,
 			String auswahl3, String auswahl4){			
 		anzahlRotCom = 0;

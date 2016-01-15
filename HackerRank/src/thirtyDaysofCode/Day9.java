@@ -20,10 +20,10 @@ public class Day9 {
 		   if(a==b){
 	    	   //Austrittspunkt der Rekursion	    	   
 	    	   return a;
-	       }else{
-	    	   //Rekursiver Aufruf der Funktion	   
+	       }else{	    	    
 	    	   a = Math.max(a,b) - Math.min(a, b);	 
-	    	   b = Math.min(speichera,speicherb);	    	     	  
+	    	   b = Math.min(speichera,speicherb);	
+	    	   //Rekursiver Aufruf der Funktion	 
 	    	   return find_gcd(a,b);	    	  
 	    	  
 	       }

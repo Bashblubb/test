@@ -10,10 +10,7 @@ public interface KeywordTranscriptionCipherIF {
 	
 	public static void buildAlphabet(){		
 	}
-	
-	public static void readInput(){		
-	}
-	
+		
 	public static void translate(){		
 	}
 	

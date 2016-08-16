@@ -6,7 +6,7 @@ import java.util.Collections;
 public class Sorting {
 		
 	public static String sortKeyword(String keyword,boolean sort) {
-		//Ziel ist es das Keyword alpühabetisch zu sortieren und nur noch eindeutige Buchstaben drin zu haben
+		//Ziel ist es das Keyword alphabetisch zu sortieren und nur noch eindeutige Buchstaben drin zu haben
 		ArrayList<String> sortedKeyword = new ArrayList<String>();
 		for (int j = 1; j <= keyword.length(); j++) {
 			//nur noch eindeutige Buchstaben

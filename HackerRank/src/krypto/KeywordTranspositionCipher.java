@@ -92,8 +92,8 @@ public class KeywordTranspositionCipher implements KeywordTranscriptionCipherIF{
 			index = 'a';
 			for (char buchstabe : alphabetNeu) {
 				// die Leerstrings sollen nicht mit übernommen werden
-				if (alphabet.containsKey(buchstabe)) {
-					alphabet.put(index, buchstabe);
+				if (alphabet.containsValue(buchstabe)) {
+					alphabet.put(buchstabe,index);
 					index++;
 				}
 			}
@@ -114,8 +114,9 @@ public class KeywordTranspositionCipher implements KeywordTranscriptionCipherIF{
 	
 	
 	public static void writeOutput() {
+		String output = decryptedText.toString();
 		//den entschlüsselten Text ausgeben
-		System.out.println(decryptedText);
+		System.out.println(output.toUpperCase());
 	}
 		
 	private static char[][] sortArray(char[][] matrix, String keywordSorted, int keywordLength ){

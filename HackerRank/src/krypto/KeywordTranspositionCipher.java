@@ -7,6 +7,7 @@ import krypto.KeywordTranscriptionCipherIF;
 import krypto.Sorting;
 
 public class KeywordTranspositionCipher implements KeywordTranscriptionCipherIF{
+	
 	static private String keyword = "";
 	static private String keywordSorted = "";
 	static private String keywordUnsorted = "";
@@ -18,34 +19,29 @@ public class KeywordTranspositionCipher implements KeywordTranscriptionCipherIF{
 	static private StringBuilder decryptedText = new StringBuilder();
 	static private Scanner in = new Scanner(System.in);
 	private static final String LINE_SEPARATOR = System.getProperty("line.separator");
+	private static int iteration = 0;
 	
-	public static void main(String[] args) {
-		buildAlphabet();		
-		translate();
-		writeOutput();
-	}
-	
-	
-	public static void buildAlphabet() {
-		// Ursprüngliches Alphabet als Hashmap
-		for (char a = 'a'; a <= 'z'; a++) {
-			alphabet.put(index, a);
-			index++;
-		}
-	}
-	
-	public static void translate() {
-		//Anzahl an Fällen
-		testcases = in.nextInt();
+	public static void main(String[] args) {	
+		KeywordTranspositionCipher translator = new KeywordTranspositionCipher();
+		testcases = in.nextInt();	
 		for (int i = 0; i < testcases; i++) {
-			keyword = in.next().toLowerCase();
+			translator.buildAlphabet();
+			translator.translate();				
+		}
+			translator.writeOutput();
+	}
+		
+	private void translate() {
+		//Anzahl an Fällen				
+			keyword = in.next().toLowerCase();	
 			cryptext = in.next().toLowerCase();
+			cryptext += in.nextLine().toLowerCase();
 			// Keyword sortieren und Buchstaben eindeutig machen
 			keywordSorted = sortKeyword(keyword, true);
 			// Unsortiertes Keyword für Alphabet
 			keywordUnsorted = sortKeyword(keyword, false);
 			// KeywordLänge
-			keywordLength = keywordUnsorted.length();
+			keywordLength = keywordSorted.length();
 			// EingangsKeyword zurücksetzen
 			keyword = "";
 			// index zurücksetzen
@@ -106,20 +102,29 @@ public class KeywordTranspositionCipher implements KeywordTranscriptionCipherIF{
 					decryptedText.append(alphabet.get(buchstabe));
 				}
 			}
-			if(i+1<testcases){
+			if(iteration+1<testcases){
 				decryptedText.append(LINE_SEPARATOR);
 			}
+			iteration++;
+		}
+	
+	
+	private void buildAlphabet() {
+		// Ursprüngliches Alphabet als Hashmap
+		for (char a = 'a'; a <= 'z'; a++) {
+			alphabet.put(index, a);
+			index++;
 		}
 	}
 	
-	
-	public static void writeOutput() {
+	private void writeOutput() {
 		String output = decryptedText.toString();
 		//den entschlüsselten Text ausgeben
 		System.out.println(output.toUpperCase());
 	}
 		
-	private static char[][] sortArray(char[][] matrix, String keywordSorted, int keywordLength ){
+	private static char[][] sortArray(char[][] matrix, String keywordSorted, int keywordLength){
+		
 		return matrix = Sorting.sortArray(matrix, keywordSorted, keywordLength);
 	}
 	
@@ -127,5 +132,6 @@ public class KeywordTranspositionCipher implements KeywordTranscriptionCipherIF{
 		return keyword = Sorting.sortKeyword(keyword,sort);
 	}
 	
-	
+
 }
+

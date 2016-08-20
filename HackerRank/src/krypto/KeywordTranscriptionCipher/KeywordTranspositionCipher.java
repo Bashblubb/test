@@ -2,11 +2,11 @@ package krypto.KeywordTranscriptionCipher;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
+import krypto.KeywordTranscriptionCipher.Sorting;
 
-import krypto.*;
-//import krypto.Sorting;
+public class KeywordTranspositionCipher implements KeywordTranscriptionCipherIF{	
 
-public class KeywordTranspositionCipher implements KeywordTranscriptionCipherIF{
+	//https://www.hackerrank.com/challenges/keyword-transposition-cipher
 	
 	static private String keyword = "";
 	static private String keywordSorted = "";

@@ -1,4 +1,4 @@
-package krypto;
+package krypto.KeywordTranscriptionCipher;
 
 public interface KeywordTranscriptionCipherIF {
 	static String keyword = "";

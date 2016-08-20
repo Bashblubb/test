@@ -1,10 +1,10 @@
-package krypto;
+package krypto.KeywordTranscriptionCipher;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
 
-import krypto.KeywordTranscriptionCipherIF;
-import krypto.Sorting;
+import krypto.*;
+//import krypto.Sorting;
 
 public class KeywordTranspositionCipher implements KeywordTranscriptionCipherIF{
 	
@@ -115,7 +115,7 @@ public class KeywordTranspositionCipher implements KeywordTranscriptionCipherIF{
 			alphabet.put(index, a);
 			index++;
 		}
-	}
+	}	
 	
 	private void writeOutput() {
 		String output = decryptedText.toString();

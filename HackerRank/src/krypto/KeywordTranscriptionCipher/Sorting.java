@@ -1,4 +1,4 @@
-package krypto;
+package krypto.KeywordTranscriptionCipher;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -31,22 +31,25 @@ public class Sorting {
 		int keywordPosition = 0;
 		int posiMatrix2 = 0;
 		int iteration = 0;
+		int length = keywordSorted.length();
 		char[][] matrix2 = new char[keywordSorted.length()][(int) Math.round((26/keywordLength) +0.5)];
 		//wiederhole solange, bis alle Einträge der ersten Array-Dimension abgearbeitet sind
-		while(iteration <keywordLength){
-			for (int i=0; i< keywordSorted.length();i++){
-				//wenn die erste Dimension mit dem ersten Buchstaben identisch ist fülle die neue Matrix auf
-				if(matrix[i][0] == keywordSorted.charAt(keywordPosition)){				
-					for(int k = 0;k<(int) Math.round((26/keywordLength) +0.5); k++){
-						matrix2[posiMatrix2][k] = matrix[i][k];
-					}		
-					//hochsetzen der keywordPosition, ersten Dimension der neuen Matrix und der Iteration
-					keywordPosition++;
-					posiMatrix2++;
-					iteration ++;					
+		while (iteration < length) {			
+				for (int i = 0; i < keywordSorted.length(); i++) {
+					if (iteration < length) {
+					// wenn die erste Dimension mit dem ersten Buchstaben identisch ist fülle die neue Matrix auf
+					if (matrix[i][0] == keywordSorted.charAt(keywordPosition)) {
+						for (int k = 0; k < (int) Math.round((26 / keywordLength) + 0.5); k++) {
+							matrix2[posiMatrix2][k] = matrix[i][k];
+						}
+						// hochsetzen der keywordPosition, ersten Dimension der neuen Matrix und der Iteration
+						keywordPosition++;
+						posiMatrix2++;
+						iteration++;
+					}
 				}
 			}
-		}		
+		}	
 		return matrix2;
 	}
 }

@@ -5,9 +5,9 @@ import java.util.Scanner;
 public class PlusMinus {	
 //https://www.hackerrank.com/challenges/plus-minus
 	
-private static int negZahlen = 0;
-private static int posZahlen = 0;
-private static int nullen = 0;
+private static double negZahlen = 0.00;
+private static double posZahlen = 0.00;
+private static double nullen = 0.00;
 private static double ergebnisNeg = 0.00;
 private static double ergebnisPos = 0.00;
 private static double ergebnisNullen= 0.00;
@@ -34,8 +34,8 @@ private static double ergebnisNullen= 0.00;
 		ergebnisNeg = negZahlen/anzahl;
 		ergebnisPos = posZahlen/anzahl;
 		ergebnisNullen = nullen/anzahl;
-		System.out.println(ergebnisNeg);
 		System.out.println(ergebnisPos);
+		System.out.println(ergebnisNeg);		
 		System.out.println(ergebnisNullen);
 	}
 

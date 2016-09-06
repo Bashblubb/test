@@ -30,8 +30,8 @@ public class KeywordTranspositionCipher implements KeywordTranscriptionCipherIF{
 		}
 			translator.writeOutput();
 	}
-		
-	private void translate() {
+	@Override
+	public void translate() {
 		//Anzahl an Fällen				
 			keyword = in.next().toLowerCase();	
 			cryptext = in.next().toLowerCase();
@@ -108,16 +108,16 @@ public class KeywordTranspositionCipher implements KeywordTranscriptionCipherIF{
 			iteration++;
 		}
 	
-	
-	private void buildAlphabet() {
+	@Override
+	public void buildAlphabet() {
 		// Ursprüngliches Alphabet als Hashmap
 		for (char a = 'a'; a <= 'z'; a++) {
 			alphabet.put(index, a);
 			index++;
 		}
 	}	
-	
-	private void writeOutput() {
+	@Override
+	public void writeOutput() {
 		String output = decryptedText.toString();
 		//den entschlüsselten Text ausgeben
 		System.out.println(output.toUpperCase());

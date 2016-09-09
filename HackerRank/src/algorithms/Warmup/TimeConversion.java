@@ -4,10 +4,9 @@ import java.util.Scanner;
 
 public class TimeConversion {
 	//https://www.hackerrank.com/challenges/time-conversion	
-	static Scanner in = new Scanner(System.in);
-	static String uhrzeit = in.nextLine();
-	
-	public static void main(String[] args) {		
+	public static void main(String[] args) {
+		Scanner in = new Scanner(System.in);
+		String uhrzeit = in.nextLine();
 		TimeConversion time = new TimeConversion();
 		System.out.println(time.convertTime(uhrzeit));
 	}

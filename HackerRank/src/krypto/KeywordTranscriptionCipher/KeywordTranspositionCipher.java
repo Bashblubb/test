@@ -23,12 +23,17 @@ public class KeywordTranspositionCipher implements KeywordTranscriptionCipherIF{
 	
 	public static void main(String[] args) {	
 		KeywordTranspositionCipher translator = new KeywordTranspositionCipher();
-		testcases = in.nextInt();	
+		translator.getCountTestcases(in);
 		for (int i = 0; i < testcases; i++) {
 			translator.buildAlphabet();
 			translator.translate();				
 		}
 			translator.writeOutput();
+	}
+		
+	public int getCountTestcases(Scanner in){		
+		this.testcases = in.nextInt();		
+		return testcases;
 	}
 	@Override
 	public void translate() {

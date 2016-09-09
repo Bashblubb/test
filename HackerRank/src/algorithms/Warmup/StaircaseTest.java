@@ -20,7 +20,20 @@ public class StaircaseTest {
 
 	@Test
 	public void testDrawStaircase() {
-		assertEquals("#", case1.drawStaircae(1));
+		// Anzahl = 1
+		System.out.println(case1.drawStaircae(1));
+		assertEquals("#", case1.drawStaircae(1).toString());
+		// Anzahl = 2
+		System.out.println(case1.drawStaircae(2));
+		assertEquals(" #" + "\n" + "##", case1.drawStaircae(2).toString());
+		// Anzahl = 6
+		System.out.println(case1.drawStaircae(6));
+		assertEquals("     #" + "\n" + "    ##" + "\n" + "   ###" + "\n" + "  ####" + "\n" + " #####" + "\n" + "######", case1.drawStaircae(6).toString());
+	
+		//Negativ-Prüfung:
+		// Anzahl = -1
+		System.out.println(case1.drawStaircae(-1));
+		assertEquals("", case1.drawStaircae(-1).toString());	
 	}
 
 }

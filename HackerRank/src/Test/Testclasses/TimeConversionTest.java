@@ -1,8 +1,8 @@
-package algorithms.Warmup;
+package Test.Testclasses;
 
 import static org.junit.Assert.*;
-import static algorithms.Warmup.TimeConversion.*;
 import org.junit.Test;
+import algorithms.Warmup.TimeConversion;
 
 public class TimeConversionTest {
 	

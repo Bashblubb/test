@@ -1,4 +1,4 @@
-package algorithms.Warmup;
+package Test.Testclasses;
 
 import static org.junit.Assert.*;
 import static org.hamcrest.CoreMatchers.*;

@@ -1,8 +1,8 @@
-package Test.Testsuite;
+package test.testSuite;
 
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
-import Test.Testclasses.*;
+import test.testClasses.*;
 
 @RunWith(Suite.class)
 @Suite.SuiteClasses({ 

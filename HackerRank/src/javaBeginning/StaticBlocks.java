@@ -1,3 +1,4 @@
+package javaBeginning;
 import java.util.Scanner;
 
 //https://www.hackerrank.com/challenges/java-static-initializer-block

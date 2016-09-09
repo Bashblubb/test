@@ -1,3 +1,4 @@
+package javaBeginning;
 import java.util.Scanner;
 
 public class Loops {

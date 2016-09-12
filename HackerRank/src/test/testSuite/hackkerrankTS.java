@@ -8,7 +8,9 @@ import test.testClasses.*;
 @Suite.SuiteClasses({ 
 	StaircaseTest.class,
 	TimeConversionTest.class,
-	KeywordTranspositionCipherTest.class
+	KeywordTranspositionCipherTest.class,
+	CompareTheTripletsTest.class,
+	KangarooTest.class
 })
 
 public class hackkerrankTS {

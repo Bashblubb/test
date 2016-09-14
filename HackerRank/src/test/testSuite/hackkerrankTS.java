@@ -10,7 +10,8 @@ import test.testClasses.*;
 	TimeConversionTest.class,
 	KeywordTranspositionCipherTest.class,
 	CompareTheTripletsTest.class,
-	KangarooTest.class
+	KangarooTest.class,
+	BiggerIsGreaterTest.class
 })
 
 public class hackkerrankTS {

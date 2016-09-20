@@ -7,6 +7,7 @@ public class TimeConversion {
 	public static void main(String[] args) {
 		Scanner in = new Scanner(System.in);
 		String uhrzeit = in.nextLine();
+		in.close();
 		TimeConversion time = new TimeConversion();
 		System.out.println(time.convertTime(uhrzeit));
 	}

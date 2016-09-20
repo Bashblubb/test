@@ -6,6 +6,7 @@ public class Day6 {
 	public static void main(String[] args) {
 		Scanner in = new Scanner(System.in);
 		int n = in.nextInt();
+		in.close();
 		String ausgabe = "";
 		int space = n -1;
 		int hashtag = 1;

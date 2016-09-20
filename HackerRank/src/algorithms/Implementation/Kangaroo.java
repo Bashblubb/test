@@ -16,7 +16,8 @@ public class Kangaroo {
 		kang1.start = in.nextInt();		
 		kang1.pace = in.nextInt();
 		kang2.start = in.nextInt();
-		kang2.pace = in.nextInt();		
+		kang2.pace = in.nextInt();
+		in.close();
 		System.out.println(getEntscheidung(kang1.start, kang2.start, kang1.pace, kang2.pace));			
 	}
 

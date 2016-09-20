@@ -29,7 +29,7 @@ public class Day8 {
 			}
 
 		}
-		
+		in.close();
 		
 
 	}

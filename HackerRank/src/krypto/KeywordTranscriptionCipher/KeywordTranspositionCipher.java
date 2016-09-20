@@ -26,7 +26,8 @@ public class KeywordTranspositionCipher implements KeywordTranscriptionCipherIF{
 		translator.getCountTestcases(in);
 		for (int i = 0; i < testcases; i++) {
 			translator.buildAlphabet();
-			translator.translate();				
+			translator.translate();	
+			in.close();
 		}
 			translator.writeOutput();
 	}

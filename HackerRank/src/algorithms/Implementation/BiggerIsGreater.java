@@ -10,6 +10,7 @@ public class BiggerIsGreater {
 		BiggerIsGreater big = new BiggerIsGreater();
 		Scanner in = new Scanner(System.in);		
 		big.testCases = in.nextInt();
+		in.close();
 		big.tests = new String[big.testCases];
 		
 		for(String test : big.tests){

@@ -12,6 +12,7 @@ public class Day10 {
 		
 		for(int i =0; i<T; i++){
 			int n = sc.nextInt();
+			sc.close();
 			int laenge = 0;
 			int zahl = 0;
 			int counter = 0;

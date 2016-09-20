@@ -11,6 +11,7 @@ public class Staircase {
 		try{
 		Staircase case1 = new Staircase();
 		anzahl = case1.getAnzahl(in.nextInt());
+		in.close();
 		System.out.println(case1.drawStaircae(anzahl));
 		}catch (Exception e) {
 			System.out.println("");

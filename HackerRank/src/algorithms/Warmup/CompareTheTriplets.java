@@ -8,13 +8,14 @@ public class CompareTheTriplets {
 	int[] aliceScores = new int[3];
 	int bobRating = 0;
 	int aliceRating = 0;
-	Scanner in = new Scanner(System.in);
+	static Scanner in = new Scanner(System.in);
 
 	public static void main(String[] args) {
 		CompareTheTriplets bob = new CompareTheTriplets();
 		CompareTheTriplets alice = new CompareTheTriplets();
 		bob.setScanner(bob.bobScores);
 		alice.setScanner(alice.aliceScores);
+		in.close();	
 		bob.bobRating = bob.getRating(bob.bobScores, alice.aliceScores);
 		alice.aliceRating = alice.getRating(alice.aliceScores, bob.bobScores);
 		System.out.println(bob.bobRating + " " + alice.aliceRating);
